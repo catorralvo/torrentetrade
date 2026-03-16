@@ -1,0 +1,19 @@
+body {
+ margin:0;
+ font-family: 'Roboto', sans-serif;
+ color:#333;
+ background:#f7f7f7;
+}
+
+header {
+ background:#002f4b;
+ color:white;
+ text-align:center;
+ padding:20px;
+}
+
+nav a {
+ color:white;
+ margin:0 15px;
+ text-decoration:none;
+}
