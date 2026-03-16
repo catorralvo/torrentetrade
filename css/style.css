@@ -5,6 +5,7 @@ background:#f4f6f8;
 color:#333;
 }
 
+
 header{
 background:#0a2540;
 color:white;
@@ -12,13 +13,16 @@ padding:25px;
 text-align:center;
 }
 
+
 .logo{
 width:180px;
 }
 
+
 nav{
 margin-top:15px;
 }
+
 
 nav a{
 color:white;
@@ -27,11 +31,13 @@ margin:0 15px;
 font-weight:500;
 }
 
+
 .hero{
 text-align:center;
 padding:60px 20px;
 background:white;
 }
+
 
 .hero img{
 width:100%;
@@ -40,6 +46,7 @@ border-radius:10px;
 margin-top:20px;
 }
 
+
 .services{
 display:flex;
 flex-wrap:wrap;
@@ -47,6 +54,7 @@ gap:30px;
 justify-content:center;
 padding:50px 20px;
 }
+
 
 .card{
 background:white;
@@ -57,9 +65,11 @@ box-shadow:0 5px 20px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
+
 .card:hover{
 transform:translateY(-5px);
 }
+
 
 .card img{
 width:100%;
@@ -67,11 +77,13 @@ border-radius:8px;
 margin-bottom:15px;
 }
 
+
 .contact{
 padding:60px 20px;
 text-align:center;
 background:white;
 }
+
 
 form{
 max-width:450px;
@@ -81,11 +93,13 @@ flex-direction:column;
 gap:15px;
 }
 
+
 input, textarea{
 padding:12px;
 border:1px solid #ccc;
 border-radius:5px;
 }
+
 
 button{
 background:#0a2540;
@@ -95,6 +109,7 @@ padding:12px;
 border-radius:5px;
 cursor:pointer;
 }
+
 
 footer{
 background:#0a2540;
