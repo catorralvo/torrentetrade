@@ -123,4 +123,176 @@ max-width:250px;
 .contact{
 background:#0a2540;
 color:white;
-text-align:center
+text-align:center;
+padding:80px 20px;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:30px;
+}
+
+input,textarea{
+padding:12px;
+border-radius:6px;
+border:none;
+}
+
+button.submit{
+background:white;
+color:#0a2540;
+font-weight:600;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#081a2c;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Torrente Trade & Advice</div>
+
+<nav>
+<a href="#services">Services</a>
+<a href="#process">Processus</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Optimisation des processus et réduction des coûts pour les PME</h1>
+
+<p>
+Nous aidons les entreprises à améliorer leurs opérations,
+réduire leurs coûts et identifier des opportunités d’équipements
+professionnels sur le marché secondaire.
+</p>
+
+<button onclick="location.href='#contact'">
+Nous contacter
+</button>
+
+</section>
+
+
+<section id="services" class="section">
+
+<h2>Nos services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Optimisation des processus</h3>
+<p>
+Analyse des flux opérationnels afin d’identifier
+des gains d’efficacité et améliorer la performance.
+</p>
+</div>
+
+<div class="card">
+<h3>Optimisation des coûts</h3>
+<p>
+Identification d’opportunités d’économie dans les
+opérations, les achats et l’organisation.
+</p>
+</div>
+
+<div class="card">
+<h3>Sourcing circulaire</h3>
+<p>
+Recherche d’équipements professionnels sur le
+marché secondaire avec analyse et négociation.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="process" class="section">
+
+<h2>Comment ça fonctionne</h2>
+
+<div class="process">
+
+<div class="step">
+<h3>1</h3>
+<p>Vous nous envoyez l'information ou l'opportunité.</p>
+</div>
+
+<div class="step">
+<h3>2</h3>
+<p>Nous analysons l'opportunité et négocions l'achat.</p>
+</div>
+
+<div class="step">
+<h3>3</h3>
+<p>L'équipement est acheté et revendu avec facture.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Vous avez du matériel à vendre ?</h2>
+
+<p style="text-align:center;max-width:700px;margin:auto;">
+Entreprises ou particuliers peuvent proposer du matériel
+professionnel disponible. Nous analysons les opportunités
+et identifions des entreprises susceptibles d’être intéressées.
+</p>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+<h2>Contact</h2>
+
+<p>Envoyez-nous votre demande et nous vous recontacterons.</p>
+
+<form action="mailto:info@torrentetrade.ch" method="post">
+
+<input type="text" placeholder="Nom">
+
+<input type="email" placeholder="Email">
+
+<textarea rows="5" placeholder="Message"></textarea>
+
+<button class="submit">Envoyer</button>
+
+</form>
+
+</section>
+
+
+<footer>
+
+Torrente Trade & Advice<br>
+Chemin des Uttins 21<br>
+1183 Bursins – Suisse<br>
+info@torrentetrade.ch
+
+</footer>
+
+</body>
+</html>
