@@ -2,150 +2,122 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Torrente Trade & Advice</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
-
-body{
-font-family: Arial;
-margin:0;
-background:#f5f5f5;
-}
-
-header{
-background:#0f172a;
-color:white;
-padding:60px 20px;
-text-align:center;
-}
-
-section{
-max-width:1000px;
-margin:auto;
-padding:60px 20px;
-}
-
-h2{
-color:#0f172a;
-}
-
-.services{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:30px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 4px 15px rgba(0,0,0,0.05);
-}
-
-footer{
-background:#0f172a;
-color:white;
-text-align:center;
-padding:40px;
-}
-
+  body {margin:0;font-family:'Montserrat', sans-serif;line-height:1.6;color:#333;}
+  header {background:#004080;color:#fff;padding:80px 20px;text-align:center;background-image:url('https://source.unsplash.com/1600x600/?office,team');background-size:cover;background-position:center;}
+  header h1 {font-size:3em;margin:0;}
+  header p {font-size:1.2em;margin-top:10px;}
+  section {padding:60px 20px;max-width:1000px;margin:0 auto;}
+  h2 {color:#004080;margin-bottom:20px;text-align:center;}
+  .services, .opportunity, .contact {display:flex;flex-wrap:wrap;justify-content:space-around;}
+  .card {background:#f5f5f5;padding:20px;margin:10px;flex:1 1 250px;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,0.1);}
+  .card img {width:100%;border-radius:5px;margin-bottom:15px;}
+  .form-group {margin-bottom:15px;}
+  input, textarea {width:100%;padding:10px;border:1px solid #ccc;border-radius:5px;}
+  button {background:#004080;color:#fff;padding:10px 20px;border:none;border-radius:5px;font-size:1em;cursor:pointer;}
+  footer {background:#004080;color:#fff;text-align:center;padding:30px 20px;}
+  @media(max-width:768px){.services,.opportunity,.contact{flex-direction:column;}}
 </style>
 </head>
-
 <body>
 
 <header>
-<h1>Torrente Trade & Advice</h1>
-<p>Optimisation des processus et réduction des coûts pour les entreprises</p>
+  <h1>Torrente Trade & Advice</h1>
+  <p>Optimisation des processus, réduction des coûts et sourcing circulaire pour les entreprises</p>
 </header>
 
 <section>
-
-<h2>Notre approche</h2>
-
-<p>
-Torrente Trade & Advice accompagne les entreprises dans l'amélioration de leurs opérations, 
-l'optimisation des coûts et l'identification d'opportunités d'achat d'équipements professionnels 
-sur le marché secondaire.
-</p>
-
+  <h2>À propos de nous</h2>
+  <p>Torrente Trade & Advice est un cabinet de conseil basé en Suisse, spécialisé dans l’optimisation des processus opérationnels et le sourcing circulaire d’équipements professionnels. Nous aidons les PME sans structure hiérarchique définie à améliorer leurs opérations, réduire leurs coûts et accéder au marché secondaire avec sécurité légale et facturation.</p>
+  <p>Notre expertise CITRAN garantit une approche structurée et rentable dans l’identification et l’achat d’équipements professionnels de seconde main, tout en permettant aux entreprises de rester concentrées sur leur cœur de métier sans créer de nouveaux postes.</p>
 </section>
 
 <section>
-
-<h2>Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Optimisation des processus</h3>
-<p>
-Analyse des flux opérationnels afin d'identifier des gains d'efficacité 
-et améliorer l'organisation des opérations.
-</p>
-</div>
-
-<div class="card">
-<h3>Optimisation des coûts</h3>
-<p>
-Identification d'opportunités d'économie dans les opérations 
-et les achats.
-</p>
-</div>
-
-<div class="card">
-<h3>Sourcing circulaire</h3>
-<p>
-Recherche d'équipements professionnels sur le marché secondaire 
-afin de réduire les investissements.
-</p>
-</div>
-
-</div>
-
+  <h2>Nos Services</h2>
+  <div class="services">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x250/?workflow,analysis" alt="Optimisation des processus">
+      <h3>Optimisation des processus</h3>
+      <p>Analyse et amélioration des flux opérationnels pour identifier des gains d’efficacité et réduire les coûts.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x250/?cost,savings" alt="Optimisation des coûts">
+      <h3>Optimisation des coûts</h3>
+      <p>Identification des opportunités d’économie dans les achats et opérations.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x250/?recycling,office" alt="Sourcing circulaire">
+      <h3>Sourcing circulaire</h3>
+      <p>Identification d’équipements professionnels sur le marché secondaire et fourniture avec facture professionnelle.</p>
+    </div>
+  </div>
 </section>
 
 <section>
-
-<h2>Vous avez repéré un équipement intéressant ?</h2>
-
-<p>
-Si vous identifiez un équipement chez un particulier ou sur une plateforme de vente,
-nous pouvons analyser l'opportunité, négocier l'achat et vous fournir l'équipement avec facture.
-</p>
-
-<p>
-1. Envoi de l'information<br>
-2. Analyse de l'opportunité<br>
-3. Négociation<br>
-4. Achat et revente avec facture
-</p>
-
+  <h2>Vous avez repéré un équipement intéressant ?</h2>
+  <div class="opportunity">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x250/?used,equipment" alt="Proposition d'équipement">
+      <h3>Envoyez-nous l’information</h3>
+      <p>Si vous trouvez un équipement chez un particulier ou sur une plateforme, nous analysons l’opportunité, négocions l’achat et vous fournissons le matériel avec facture.</p>
+    </div>
+    <div class="card">
+      <h3>Processus</h3>
+      <ol>
+        <li>Envoyer l’information via notre formulaire</li>
+        <li>Analyse et vérification de l’opportunité</li>
+        <li>Négociation avec le vendeur</li>
+        <li>Achat et revente avec facture</li>
+      </ol>
+    </div>
+  </div>
 </section>
 
 <section>
+  <h2>Proposer un matériel à vendre</h2>
+  <div class="opportunity">
+    <div class="card">
+      <p>Entreprises ou particuliers peuvent proposer du matériel. Nous analysons les équipements disponibles et identifions des acheteurs professionnels potentiels.</p>
+    </div>
+  </div>
+</section>
 
-<h2>Contact</h2>
-
-<p>
-Torrente Trade & Advice<br>
-Chemin des Uttins 21<br>
-1183 Bursins<br>
-Suisse
-</p>
-
-<p>
-info@torrentetrade.ch<br>
-+41 78 731 33 61
-</p>
-
+<section>
+  <h2>Contactez-nous</h2>
+  <div class="contact">
+    <div class="card">
+      <p>Pour toute demande, utilisez le formulaire ci-dessous et nous vous recontacterons par email.</p>
+      <form id="contactForm">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Nom" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+      <p style="margin-top:10px;">Email de contact direct : <a href="mailto:info@torrentetrade.ch">info@torrentetrade.ch</a></p>
+    </div>
+  </div>
 </section>
 
 <footer>
-
-<p>Torrente Trade & Advice</p>
-
+  &copy; 2026 Torrente Trade & Advice | Suisse
 </footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert("Merci ! Votre message a été envoyé. Nous vous contacterons rapidement.");
+    this.reset();
+  });
+</script>
 
 </body>
 </html>
