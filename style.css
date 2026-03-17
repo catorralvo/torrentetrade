@@ -1,112 +1,108 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
 }
 
+/* HEADER */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #002f4b;
+    background: #002f4b;
+    padding: 15px 25px;
 }
 
-header .logo img {
-    height: 60px;
+.logo img {
+    height: 80px; /* MÁS GRANDE */
 }
 
-header .lang-buttons button {
+.lang-buttons button {
+    padding: 8px 14px;
     margin-left: 5px;
-    padding: 8px 15px;
-    background: #0077b6;
-    color: #fff;
     border: none;
-    border-radius: 5px;
+    background: #0077b6;
+    color: white;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-header .lang-buttons button:hover {
-    background: #0096c7;
-}
-
+/* HERO */
 .hero {
     text-align: center;
-    padding: 50px 20px;
+    padding: 40px 20px;
     background: #005f73;
-    color: #fff;
+    color: white;
 }
 
 .hero img {
-    max-width: 400px;
-    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
     border-radius: 10px;
 }
 
-.hero h1 {
-    font-size: 2.2em;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 1.2em;
-}
-
-.services, .opportunity, .sell, .contact {
-    padding: 50px 20px;
+/* SECCIONES */
+.services, .process, .opportunity, .sell, .contact {
+    background: white;
+    margin: 20px auto;
+    padding: 30px;
     max-width: 1000px;
-    margin: auto;
-    background: #fff;
-    margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-}
-
-.services h2, .opportunity h2, .sell h2, .contact h2 {
-    text-align: center;
-    color: #002f4b;
-    margin-bottom: 30px;
 }
 
 .service-item {
+    margin-bottom: 20px;
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .service-item img {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     border-radius: 10px;
 }
 
+/* FORM */
 form {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    margin: auto;
 }
 
-form input, form textarea {
+input, textarea {
     padding: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 1em;
 }
 
-form button {
+button {
     padding: 14px;
-    font-size: 1.1em;
     background: #0077b6;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
 }
 
-form button:hover {
-    background: #0096c7;
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #002f4b;
+    color: white;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .logo img {
+        height: 60px;
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .services, .process, .contact {
+        padding: 20px;
+    }
 }
