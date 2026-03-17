@@ -7,19 +7,21 @@ color:#1a1a1a;
 
 /* HEADER */
 header{
-text-align:center;
-padding:20px;
+position:sticky;
+top:0;
 background:white;
+text-align:center;
+padding:15px;
 box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo{
-height:100px;
+height:120px;
 }
 
 .lang-buttons button{
 margin:5px;
-padding:8px 12px;
+padding:8px 14px;
 border:none;
 background:#eee;
 border-radius:20px;
@@ -36,8 +38,14 @@ text-align:center;
 padding:60px 20px;
 }
 
+.hero img{
+width:80%;
+max-width:800px;
+border-radius:10px;
+}
+
 .hero h1{
-font-size:32px;
+font-size:36px;
 }
 
 .hero p{
@@ -45,30 +53,61 @@ color:#555;
 }
 
 .tagline{
-margin-top:10px;
+margin-top:15px;
 font-weight:600;
 color:#003366;
 }
 
 /* SECTIONS */
 .section{
-padding:40px;
+padding:60px 20px;
 text-align:center;
+max-width:1000px;
+margin:auto;
 }
 
+/* CARDS */
 .cards{
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
 }
 
 .card{
 background:white;
 padding:20px;
-margin:10px;
+margin:15px;
+border-radius:15px;
+width:280px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
 border-radius:10px;
-width:250px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* APPROACH IMAGE */
+.approach-img{
+width:60%;
+max-width:500px;
+}
+
+/* PROCESS */
+.process{
+list-style:none;
+padding:0;
+}
+
+.process li{
+margin:10px 0;
 }
 
 /* CONTACT */
@@ -78,16 +117,18 @@ box-shadow:0 5px 15px rgba(0,0,0,0.05);
 width:90%;
 max-width:400px;
 margin:10px;
-padding:10px;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
 }
 
-/* BUTTON */
 .contact button{
 background:#003366;
 color:white;
-padding:10px 25px;
+padding:12px 30px;
 border:none;
-border-radius:20px;
+border-radius:30px;
+cursor:pointer;
 }
 
 /* WHATSAPP */
@@ -97,19 +138,20 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
+font-size:28px;
 padding:15px;
 border-radius:50%;
-font-size:25px;
 }
 
 /* FOOTER */
 footer{
+background:#003366;
+color:white;
 text-align:center;
 padding:20px;
-color:#777;
 }
 
-/* ANIMACIONES */
+/* ANIMATION */
 .fade{
 opacity:0;
 transform:translateY(20px);
@@ -123,8 +165,16 @@ transform:translateY(0);
 
 /* RESPONSIVE */
 @media(max-width:768px){
+.hero img{
+width:95%;
+}
+
 .cards{
 flex-direction:column;
 align-items:center;
+}
+
+.approach-img{
+width:90%;
 }
 }
