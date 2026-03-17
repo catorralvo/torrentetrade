@@ -14,17 +14,18 @@ header {
 }
 
 .logo img {
-    height: 80px; /* MÁS GRANDE */
+    height: 120px;
 }
 
+/* BOTONES */
 .lang-buttons button {
-    padding: 8px 14px;
+    padding: 10px 15px;
     margin-left: 5px;
     border: none;
     background: #0077b6;
     color: white;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 /* HERO */
@@ -38,34 +39,54 @@ header {
 .hero img {
     display: block;
     margin: 0 auto;
-    max-width: 90%;
+    max-width: 85%;
     border-radius: 10px;
 }
 
 /* SECCIONES */
+.services {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
 .services, .process, .opportunity, .sell, .contact {
     background: white;
     margin: 20px auto;
     padding: 30px;
-    max-width: 1000px;
+    max-width: 1100px;
     border-radius: 10px;
 }
 
 .service-item {
-    margin-bottom: 20px;
+    flex: 1;
+    min-width: 280px;
     text-align: center;
 }
 
 .service-item img {
     width: 100%;
-    max-width: 250px;
+    max-width: 420px;
     border-radius: 10px;
+}
+
+/* PROCESS */
+.process {
+    text-align: center;
+}
+
+.process-img {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
 }
 
 /* FORM */
 form {
     display: flex;
     flex-direction: column;
+    max-width: 500px;
+    margin: auto;
 }
 
 input, textarea {
@@ -92,17 +113,17 @@ footer {
     color: white;
 }
 
-/* 📱 MOBILE */
+/* MOBILE */
 @media (max-width: 768px) {
     .logo img {
-        height: 60px;
+        height: 80px;
     }
 
-    .hero h1 {
-        font-size: 1.5em;
+    .services {
+        flex-direction: column;
     }
 
-    .services, .process, .contact {
-        padding: 20px;
+    .service-item img {
+        max-width: 100%;
     }
 }
