@@ -5,43 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Torrente Trade & Advice | Conseil opérationnel & opportunités industrielles</title>
-<meta name="description" content="Réduisez vos coûts et accédez aux meilleures opportunités industrielles. Conseil opérationnel et sourcing d’équipements professionnels.">
-<meta name="keywords" content="optimisation coûts, lean management suisse, machines occasion, sourcing industriel, conseil opérationnel">
+<meta name="description" content="Réduisez vos coûts et accédez aux meilleures opportunités industrielles. Conseil opérationnel, optimisation et sourcing d’équipements professionnels.">
+<meta name="keywords" content="optimisation coûts, lean management, machines d'occasion, sourcing industriel, conseil opérationnel">
 <meta name="author" content="Torrente Trade & Advice">
 
-<!-- Open Graph / Facebook -->
 <meta property="og:title" content="Torrente Trade & Advice">
 <meta property="og:description" content="Conseil opérationnel & opportunités industrielles">
 <meta property="og:image" content="Logo1.png">
-<meta property="og:url" content="https://www.torrentetrade.ch/">
 <meta property="og:type" content="website">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Torrente Trade & Advice">
-<meta name="twitter:description" content="Conseil opérationnel & opportunités industrielles">
-<meta name="twitter:image" content="Logo1.png">
-
-<!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Torrente Trade & Advice",
-  "url": "https://www.torrentetrade.ch/",
-  "logo": "https://www.torrentetrade.ch/Logo1.png",
-  "sameAs": [
-    "https://www.linkedin.com/company/torrentetrade",
-    "https://www.instagram.com/torrentetrade"
-  ],
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "email": "info@torrentetrade.ch",
-    "contactType": "customer service",
-    "availableLanguage": ["French","English","Spanish"]
-  }]
-}
-</script>
 
 <link rel="icon" href="Logo1.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -52,7 +23,7 @@
 body{
 margin:0;
 font-family:'Inter', sans-serif;
-background:#f4f6f9;
+background:#f4f4f4;
 color:#1a1a1a;
 line-height:1.6;
 scroll-behavior:smooth;
@@ -60,8 +31,6 @@ scroll-behavior:smooth;
 
 /* HEADER */
 header{
-position:sticky;
-top:0;
 background:white;
 text-align:center;
 padding:20px 0;
@@ -71,6 +40,9 @@ z-index:1000;
 header img.logo{
 height:140px;
 margin-bottom:10px;
+}
+.lang{
+margin-top:10px;
 }
 .lang button{
 border:none;
@@ -82,16 +54,18 @@ border-radius:20px;
 font-size:12px;
 transition:0.3s;
 }
-.lang button:hover{background:#555;color:white;}
+.lang button:hover{
+background:#555;color:white;
+}
 
 /* HERO */
 .hero{
 text-align:center;
 padding:80px 20px 60px;
-background:linear-gradient(135deg,#e0f7fa,#b2ebf2);
 border-radius:20px;
 margin:20px;
 box-shadow:0 8px 25px rgba(0,0,0,0.05);
+background:#f9f9f9;
 }
 .hero img{
 max-width:100%;
@@ -114,7 +88,7 @@ color:#333;
 .tagline{
 margin-top:20px;
 font-weight:600;
-color:#333;
+color:#222;
 }
 
 /* CTA */
@@ -122,7 +96,7 @@ color:#333;
 margin-top:25px;
 }
 .cta a{
-background:#333;
+background:#444;
 color:white;
 padding:14px 30px;
 border-radius:30px;
@@ -130,7 +104,7 @@ text-decoration:none;
 transition:0.3s;
 font-weight:600;
 }
-.cta a:hover{background:#555;transform:translateY(-3px);}
+.cta a:hover{background:#222;transform:translateY(-3px);}
 
 /* SECTIONS */
 .section{
@@ -189,7 +163,7 @@ transition:0.5s;
 
 /* BLOCKS */
 .block{
-background:#f0f4f8;
+background:#f0f0f0;
 padding:40px;
 border-radius:15px;
 margin:20px auto;
@@ -210,7 +184,7 @@ border-radius:8px;
 font-size:14px;
 }
 .contact button{
-background:#333;
+background:#444;
 color:white;
 padding:12px 30px;
 border:none;
@@ -218,7 +192,7 @@ border-radius:30px;
 cursor:pointer;
 transition:0.3s;
 }
-.contact button:hover{background:#555;transform:translateY(-2px);}
+.contact button:hover{background:#222;transform:translateY(-2px);}
 
 /* WHATSAPP */
 .whatsapp{
@@ -245,6 +219,8 @@ color:#777;
 background:#fff;
 margin-top:50px;
 }
+a{color:#444;text-decoration:none;}
+a:hover{color:#222;}
 
 /* ANIMATIONS */
 .fade{opacity:0;transform:translateY(20px);transition:1s;}
@@ -274,7 +250,7 @@ margin-top:50px;
 <div class="hero fade">
 <img src="Fabrica.jpg" alt="Fábrica">
 <h1>Réduisez vos coûts et optimisez vos opérations</h1>
-<p>Nous accompagnons les entreprises pour améliorer leurs processus, réduire les coûts et identifier les opportunités industrielles.</p>
+<p>Nous accompagnons les entreprises pour améliorer leurs processus, réduire les coûts et identifier les opportunités industrielles. <strong>+20% gains potentiels identifiés en moyenne</strong>.</p>
 <div class="tagline">Approche terrain • Résultats mesurables • Zéro complexité inutile</div>
 <div class="cta"><a href="#contact">Discuter d’un projet</a></div>
 </div>
@@ -290,12 +266,12 @@ margin-top:50px;
 <div class="card">
 <img src="Juego.jpg" alt="Optimisation des coûts">
 <h3>Optimisation des coûts</h3>
-<p>Identification des pertes et opportunités d'économie.</p>
+<p>Identification des pertes et opportunités d'économie. <strong>Économies typiques 15-30%</strong></p>
 </div>
 <div class="card">
 <img src="Taller.jpg" alt="Sourcing circulaire">
 <h3>Sourcing circulaire</h3>
-<p>Identification et acquisition d’équipements professionnels sur le marché secondaire.</p>
+<p>Acquisition d’équipements industriels de seconde main pour réduire les coûts et le gaspillage.</p>
 </div>
 </div>
 </div>
@@ -303,7 +279,7 @@ margin-top:50px;
 <div class="section fade process">
 <h2>Notre approche</h2>
 <img src="explica.png" alt="Notre approche">
-<p>Nous analysons vos besoins, proposons un plan d’action clair et exécutons rapidement pour des résultats concrets.</p>
+<p>Analyse des besoins, plan d’action clair, mise en œuvre rapide et suivi des résultats concrets.</p>
 </div>
 
 <div class="block fade">
@@ -322,7 +298,7 @@ margin-top:50px;
 <div class="hero fade">
 <img src="Fabrica.jpg" alt="Factory">
 <h1>Reduce Costs and Optimize Operations</h1>
-<p>We help businesses improve processes, reduce costs, and identify industrial opportunities.</p>
+<p>We help businesses improve processes, reduce costs, and identify industrial opportunities. <strong>+20% potential gains identified on average</strong>.</p>
 <div class="tagline">Hands-on approach • Measurable results • Zero unnecessary complexity</div>
 <div class="cta"><a href="#contact">Discuss a Project</a></div>
 </div>
@@ -338,12 +314,12 @@ margin-top:50px;
 <div class="card">
 <img src="Juego.jpg" alt="Cost Optimization">
 <h3>Cost Optimization</h3>
-<p>Identify invisible losses and savings opportunities.</p>
+<p>Identify invisible losses and savings opportunities. <strong>Typical savings 15-30%</strong></p>
 </div>
 <div class="card">
 <img src="Taller.jpg" alt="Circular Sourcing">
 <h3>Circular Sourcing</h3>
-<p>Identify and acquire professional equipment on the secondary market.</p>
+<p>Acquire second-hand industrial equipment to cut costs and waste.</p>
 </div>
 </div>
 </div>
@@ -351,12 +327,12 @@ margin-top:50px;
 <div class="section fade process">
 <h2>Our Approach</h2>
 <img src="explica.png" alt="Our approach">
-<p>We analyze your needs, propose a clear action plan, and execute quickly for tangible results.</p>
+<p>Needs analysis, clear action plan, fast execution, and tracking of measurable results.</p>
 </div>
 
 <div class="block fade">
 <h2>Equipment Purchase</h2>
-<p>For any company wishing to acquire second-hand equipment with invoice, we find and secure the best opportunities.</p>
+<p>For companies wishing to acquire second-hand equipment with invoice, we find and secure the best opportunities.</p>
 </div>
 
 <div class="block fade">
@@ -370,7 +346,7 @@ margin-top:50px;
 <div class="hero fade">
 <img src="Fabrica.jpg" alt="Fábrica">
 <h1>Reduzca costos y optimice operaciones</h1>
-<p>Ayudamos a empresas a mejorar procesos, reducir costos y encontrar oportunidades industriales.</p>
+<p>Ayudamos a empresas a mejorar procesos, reducir costos y encontrar oportunidades industriales. <strong>+20% ganancias potenciales identificadas en promedio</strong>.</p>
 <div class="tagline">Enfoque práctico • Resultados medibles • Cero complejidad innecesaria</div>
 <div class="cta"><a href="#contact">Discutir un proyecto</a></div>
 </div>
@@ -386,12 +362,12 @@ margin-top:50px;
 <div class="card">
 <img src="Juego.jpg" alt="Optimización de costos">
 <h3>Optimización de costos</h3>
-<p>Identificamos pérdidas y oportunidades de ahorro.</p>
+<p>Identificamos pérdidas y oportunidades de ahorro. <strong>Ahorros típicos 15-30%</strong></p>
 </div>
 <div class="card">
 <img src="Taller.jpg" alt="Sourcing circular">
 <h3>Sourcing circular</h3>
-<p>Identificamos y adquirimos equipamiento profesional del mercado secundario.</p>
+<p>Adquirimos equipamiento profesional de segunda mano para reducir costos y desperdicio.</p>
 </div>
 </div>
 </div>
@@ -399,37 +375,37 @@ margin-top:50px;
 <div class="section fade process">
 <h2>Nuestro enfoque</h2>
 <img src="explica.png" alt="Nuestro enfoque">
-<p>Analizamos sus necesidades, proponemos un plan claro y ejecutamos rápido para resultados concretos.</p>
+<p>Analizamos sus necesidades, plan de acción claro, ejecución rápida y seguimiento de resultados concretos.</p>
 </div>
 
 <div class="block fade">
 <h2>Compra de equipo</h2>
-<p>Para cualquier empresa que desee adquirir equipos de segunda mano con factura, encontramos y aseguramos la mejor oportunidad.</p>
+<p>Para empresas que deseen adquirir equipos de segunda mano con factura, encontramos y aseguramos la mejor oportunidad.</p>
 </div>
 
 <div class="block fade">
 <h2>Venta de máquina</h2>
-<p>Si eres particular o empresa y quieres proponer una máquina, la conectamos de inmediato con compradores calificados.</p>
+<p>Si eres particular o empresa y quieres proponer una máquina, la conectamos inmediatamente con compradores calificados.</p>
 </div>
 </section>
 
 <!-- CONTACT -->
 <div class="section contact fade" id="contact">
-<h2 id="contact-title">Contacto</h2>
-<form id="contact-form" action="https://formspree.io/f/xaqpledl" method="POST">
-<input type="email" name="email" placeholder="Tu email" required>
-<select name="type">
-<option>Consulting</option>
-<option>Compra</option>
-<option>Venta</option>
+<h2 class="contact-title"></h2>
+<form action="https://formspree.io/f/xaqpledl" method="POST">
+<input type="email" name="email" class="contact-email" required>
+<select name="type" class="contact-type">
+<option value="consulting">Consulting</option>
+<option value="purchase">Compra / Achat / Purchase</option>
+<option value="sale">Venta / Vente / Sale</option>
 </select>
-<textarea name="message" placeholder="Tu mensaje" required></textarea>
-<button>Enviar</button>
+<textarea name="message" class="contact-message" required></textarea>
+<button class="contact-button"></button>
 </form>
 </div>
 
 <!-- WhatsApp -->
-<a id="whatsapp-link" href="https://wa.me/41787313361?text=Hola,%20quiero%20discutir%20una%20oportunidad%20(Torrentetrade)" class="whatsapp">
+<a href="#" class="whatsapp" target="_blank">
 <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -439,44 +415,41 @@ margin-top:50px;
 </footer>
 
 <script>
-// idioma
+// Idioma
+let currentLang = 'fr';
 function setLang(lang){
-  document.querySelectorAll('.lang-section').forEach(el=>el.style.display='none');
-  document.querySelector('.'+lang).style.display='block';
+currentLang = lang;
+document.querySelectorAll('.lang-section').forEach(el=>el.style.display='none');
+document.querySelector('.'+lang).style.display='block';
 
-  // Contacto multi idioma
-  const contactTitle = document.getElementById('contact-title');
-  const contactForm = document.getElementById('contact-form');
-  const inputs = contactForm.querySelectorAll('input, textarea, button, select');
+// Contact text
+const contactTitles = {
+fr:'Contactez-nous',
+en:'Contact',
+es:'Contacto'
+};
+document.querySelector('.contact-title').innerText = contactTitles[lang];
 
-  if(lang==='fr'){
-    contactTitle.textContent = "Contact";
-    inputs[0].placeholder = "Votre email";
-    inputs[1].innerHTML = "<option>Consulting</option><option>Achat</option><option>Vente</option>";
-    inputs[2].placeholder = "Votre message";
-    inputs[3].textContent = "Envoyer";
-    document.getElementById('whatsapp-link').href = "https://wa.me/41787313361?text=Bonjour,%20je%20souhaite%20discuter%20d’une%20opportunité%20(Torrentetrade)";
-  }
-  if(lang==='en'){
-    contactTitle.textContent = "Contact";
-    inputs[0].placeholder = "Your email";
-    inputs[1].innerHTML = "<option>Consulting</option><option>Purchase</option><option>Sale</option>";
-    inputs[2].placeholder = "Your message";
-    inputs[3].textContent = "Send";
-    document.getElementById('whatsapp-link').href = "https://wa.me/41787313361?text=Hello,%20I%20want%20to%20discuss%20an%20opportunity%20(Torrentetrade)";
-  }
-  if(lang==='es'){
-    contactTitle.textContent = "Contacto";
-    inputs[0].placeholder = "Tu email";
-    inputs[1].innerHTML = "<option>Consulting</option><option>Compra</option><option>Venta</option>";
-    inputs[2].placeholder = "Tu mensaje";
-    inputs[3].textContent = "Enviar";
-    document.getElementById('whatsapp-link').href = "https://wa.me/41787313361?text=Hola,%20quiero%20discutir%20una%20oportunidad%20(Torrentetrade)";
-  }
+const contactPlaceholders = {
+email:{fr:'Votre email',en:'Your email',es:'Tu email'},
+message:{fr:'Votre message',en:'Your message',es:'Tu mensaje'},
+button:{fr:'Envoyer',en:'Send',es:'Enviar'}
+};
+document.querySelector('.contact-email').placeholder = contactPlaceholders.email[lang];
+document.querySelector('.contact-message').placeholder = contactPlaceholders.message[lang];
+document.querySelector('.contact-button').innerText = contactPlaceholders.button[lang];
+
+// WhatsApp
+const waTexts = {
+fr:'Bonjour,%20je%20souhaite%20discuter%20d’une%20opportunité%20(Torrentetrade)',
+en:'Hello,%20I%20want%20to%20discuss%20an%20opportunity%20(Torrentetrade)',
+es:'Hola,%20quiero%20discutir%20una%20oportunidad%20(Torrentetrade)'
+};
+document.querySelector('.whatsapp').href = 'https://wa.me/41787313361?text='+waTexts[lang];
 }
 setLang('fr'); // Francés por defecto
 
-// animaciones
+// Animaciones
 const faders = document.querySelectorAll('.fade');
 const observer = new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
@@ -485,6 +458,5 @@ if(entry.isIntersecting){entry.target.classList.add('show');}
 });
 faders.forEach(el=>observer.observe(el));
 </script>
-
 </body>
 </html>
