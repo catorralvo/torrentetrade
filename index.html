@@ -1,202 +1,165 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Torrente Trade & Advice</title>
-<style>
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; }
-
-a { text-decoration: none; color: inherit; }
-
-header { background-color: #0d3b66; color: #fff; padding: 20px 50px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
-
-header img { height: 50px; cursor: pointer; }
-
-nav a { margin-left: 20px; font-weight: bold; color: #fff; transition: color 0.3s; }
-nav a:hover { color: #faa307; }
-
-.language-switch { margin-left: 20px; cursor: pointer; font-size: 0.9em; }
-.language-switch span { margin-left: 5px; color: #faa307; font-weight: bold; }
-
-.hero { background-color: #e0e0e0; padding: 100px 50px; text-align: center; background-image: url('taller.png'); background-size: cover; background-position: center; color: #0d3b66; }
-.hero h1 { font-size: 3em; margin-bottom: 20px; }
-.hero p { font-size: 1.2em; max-width: 700px; margin: 0 auto; }
-
-section { padding: 80px 50px; }
-
-.services { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
-.service-card { background-color: #fff; flex: 1 1 30%; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
-.service-card:hover { transform: translateY(-5px); }
-.service-card img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
-.service-card h3 { margin-bottom: 10px; color: #0d3b66; }
-.service-card p { font-size: 0.95em; }
-
-.opportunity, .sell-equipment { background-color: #f1f1f1; border-radius: 10px; padding: 40px 20px; margin-bottom: 40px; }
-.opportunity h2, .sell-equipment h2 { margin-bottom: 20px; color: #0d3b66; }
-.opportunity ol { padding-left: 20px; margin-top: 10px; }
-
-form { display: flex; flex-direction: column; gap: 15px; }
-input[type="email"], textarea { padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em; width: 100%; }
-textarea { resize: vertical; min-height: 100px; }
-button { background-color: #0d3b66; color: #fff; padding: 15px 20px; font-size: 1em; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; }
-button:hover { background-color: #faa307; }
-
-footer { background-color: #0d3b66; color: #fff; text-align: center; padding: 30px 20px; }
-footer a { color: #fff; font-weight: bold; }
-
-[lang="en"] { display: none; }
-[lang="es"] { display: none; }
-
-@media (max-width: 900px) {
-    .services { flex-direction: column; }
-    header { flex-direction: column; align-items: flex-start; }
-    nav { margin-top: 10px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torrente Trade & Advice</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <a href="#hero"><img src="logo1.png" alt="Torrente Trade & Advice"></a>
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#opportunity">Opportunité</a>
-        <a href="#sell">Vente</a>
-        <a href="#contact">Contact</a>
-        <span class="language-switch">
-            <span onclick="changeLang('fr')">FR</span> |
-            <span onclick="changeLang('en')">EN</span> |
-            <span onclick="changeLang('es')">ES</span>
-        </span>
-    </nav>
+    <div class="logo">
+        <a href="#"><img src="logo1.png" alt="Torrente Trade & Advice"></a>
+    </div>
+    <div class="lang-buttons">
+        <button onclick="setLanguage('fr')">FR</button>
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('es')">ES</button>
+    </div>
 </header>
 
-<section class="hero" id="hero">
-    <h1 lang="fr">Optimisation des processus et réduction des coûts</h1>
-    <p lang="fr">Torrente Trade & Advice accompagne les PME dans l’amélioration de leurs opérations et l’identification d’opportunités d’économie grâce à une approche opérationnelle et au sourcing circulaire.</p>
+<main>
+    <!-- Secciones en Francés -->
+    <section class="lang fr">
+        <div class="hero">
+            <img src="taller.png" alt="Bureau de conseil">
+            <h1>Optimisation des processus et réduction des coûts pour les entreprises</h1>
+            <p>Torrente Trade & Advice accompagne les entreprises dans l’amélioration de leurs opérations et l’identification d’opportunités d’économie grâce à une approche opérationnelle et au sourcing circulaire.</p>
+        </div>
+        <div class="services">
+            <h2>Nos Services</h2>
+            <div class="service-item">
+                <img src="tableta graphique.png" alt="">
+                <h3>Optimisation des processus</h3>
+                <p>Analyse et amélioration des flux opérationnels afin d’identifier des gains d’efficacité et réduire les coûts.</p>
+            </div>
+            <div class="service-item">
+                <img src="management.png" alt="">
+                <h3>Optimisation des coûts</h3>
+                <p>Identification d’opportunités d’économie dans les opérations et les achats.</p>
+            </div>
+            <div class="service-item">
+                <img src="fabrica.png" alt="">
+                <h3>Sourcing circulaire</h3>
+                <p>Identification d’opportunités d’équipements professionnels sur le marché secondaire.</p>
+            </div>
+        </div>
+        <div class="opportunity">
+            <h2>Vous avez repéré un équipement intéressant ?</h2>
+            <p>Si vous identifiez un équipement auprès d’un particulier ou sur une plateforme de vente, nous pouvons analyser l’opportunité, négocier l’achat et vous fournir l’équipement avec facture.</p>
+        </div>
+        <div class="sell">
+            <h2>Vous avez du matériel à vendre ?</h2>
+            <p>Entreprises ou particuliers peuvent proposer du matériel. Nous analysons les équipements disponibles et identifions des entreprises susceptibles d’être intéressées.</p>
+        </div>
+        <div class="contact">
+            <h2>Contact</h2>
+            <form id="contactForm">
+                <input type="email" placeholder="Votre email" required>
+                <textarea placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
 
-    <h1 lang="en">Process Optimization and Cost Reduction</h1>
-    <p lang="en">Torrente Trade & Advice helps SMEs improve operations and identify savings opportunities through operational consulting and circular sourcing.</p>
+    <!-- Secciones en Inglés -->
+    <section class="lang en">
+        <div class="hero">
+            <img src="taller.png" alt="Consulting Office">
+            <h1>Process Optimization & Cost Reduction for Businesses</h1>
+            <p>Torrente Trade & Advice helps companies improve operations and identify savings opportunities through operational approach and circular sourcing.</p>
+        </div>
+        <div class="services">
+            <h2>Services</h2>
+            <div class="service-item">
+                <img src="tableta graphique.png" alt="">
+                <h3>Process Optimization</h3>
+                <p>Analyze and improve operational workflows to increase efficiency and reduce operational costs.</p>
+            </div>
+            <div class="service-item">
+                <img src="management.png" alt="">
+                <h3>Cost Optimization</h3>
+                <p>Identify cost saving opportunities in operations and procurement.</p>
+            </div>
+            <div class="service-item">
+                <img src="fabrica.png" alt="">
+                <h3>Circular Sourcing</h3>
+                <p>Identify professional equipment opportunities on the secondary market.</p>
+            </div>
+        </div>
+        <div class="opportunity">
+            <h2>Found Interesting Equipment?</h2>
+            <p>If you find equipment from a private seller or marketplace, we can analyze, negotiate and deliver with invoice.</p>
+        </div>
+        <div class="sell">
+            <h2>Have Equipment to Sell?</h2>
+            <p>Companies or individuals can propose equipment. We analyze and match with potential buyers.</p>
+        </div>
+        <div class="contact">
+            <h2>Contact</h2>
+            <form id="contactFormEn">
+                <input type="email" placeholder="Your email" required>
+                <textarea placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
 
-    <h1 lang="es">Optimización de procesos y reducción de costes</h1>
-    <p lang="es">Torrente Trade & Advice ayuda a las PYMEs a mejorar sus operaciones e identificar oportunidades de ahorro mediante consultoría operativa y sourcing circular.</p>
-</section>
+    <!-- Secciones en Español -->
+    <section class="lang es">
+        <div class="hero">
+            <img src="taller.png" alt="Oficina de consultoría">
+            <h1>Optimización de procesos y reducción de costos para empresas</h1>
+            <p>Torrente Trade & Advice ayuda a las empresas a mejorar operaciones e identificar oportunidades de ahorro mediante un enfoque operativo y sourcing circular.</p>
+        </div>
+        <div class="services">
+            <h2>Servicios</h2>
+            <div class="service-item">
+                <img src="tableta graphique.png" alt="">
+                <h3>Optimización de procesos</h3>
+                <p>Analizar y mejorar los flujos operativos para aumentar eficiencia y reducir costos.</p>
+            </div>
+            <div class="service-item">
+                <img src="management.png" alt="">
+                <h3>Optimización de costos</h3>
+                <p>Identificar oportunidades de ahorro en operaciones y compras.</p>
+            </div>
+            <div class="service-item">
+                <img src="fabrica.png" alt="">
+                <h3>Sourcing circular</h3>
+                <p>Identificar oportunidades de equipamiento profesional en el mercado secundario.</p>
+            </div>
+        </div>
+        <div class="opportunity">
+            <h2>¿Encontró un equipo interesante?</h2>
+            <p>Si encuentra un equipo de un particular o en marketplace, podemos analizar, negociar y entregar con factura.</p>
+        </div>
+        <div class="sell">
+            <h2>¿Tiene material para vender?</h2>
+            <p>Empresas o particulares pueden proponer equipos. Analizamos y buscamos compradores adecuados.</p>
+        </div>
+        <div class="contact">
+            <h2>Contacto</h2>
+            <form id="contactFormEs">
+                <input type="email" placeholder="Su email" required>
+                <textarea placeholder="Su mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
 
-<section class="services" id="services">
-    <!-- FR -->
-    <div class="service-card" lang="fr">
-        <img src="tableta graphique.png" alt="Optimisation des processus">
-        <h3>Optimisation des processus</h3>
-        <p>Analyse et amélioration des flux opérationnels afin d’identifier des gains d’efficacité et réduire les coûts.</p>
-    </div>
-    <div class="service-card" lang="fr">
-        <img src="management.png" alt="Optimisation des coûts">
-        <h3>Optimisation des coûts</h3>
-        <p>Identification d’opportunités d’économie dans les opérations et les achats.</p>
-    </div>
-    <div class="service-card" lang="fr">
-        <img src="fabrica.png" alt="Sourcing circulaire">
-        <h3>Sourcing circulaire</h3>
-        <p>Identification d’opportunités d’équipements professionnels sur le marché secondaire et fourniture avec facture.</p>
-    </div>
-    <!-- EN -->
-    <div class="service-card" lang="en">
-        <img src="tableta graphique.png" alt="Process Optimization">
-        <h3>Process Optimization</h3>
-        <p>Analyze and improve operational workflows to increase efficiency and reduce costs.</p>
-    </div>
-    <div class="service-card" lang="en">
-        <img src="management.png" alt="Cost Optimization">
-        <h3>Cost Optimization</h3>
-        <p>Identify cost saving opportunities in operations and procurement.</p>
-    </div>
-    <div class="service-card" lang="en">
-        <img src="fabrica.png" alt="Circular Sourcing">
-        <h3>Circular Sourcing</h3>
-        <p>Identify professional equipment opportunities on the secondary market and provide with invoice.</p>
-    </div>
-    <!-- ES -->
-    <div class="service-card" lang="es">
-        <img src="tableta graphique.png" alt="Optimización de procesos">
-        <h3>Optimización de procesos</h3>
-        <p>Analizar y mejorar los flujos operativos para aumentar la eficiencia y reducir costos.</p>
-    </div>
-    <div class="service-card" lang="es">
-        <img src="management.png" alt="Optimización de costes">
-        <h3>Optimización de costes</h3>
-        <p>Identificar oportunidades de ahorro en operaciones y compras.</p>
-    </div>
-    <div class="service-card" lang="es">
-        <img src="fabrica.png" alt="Sourcing circular">
-        <h3>Sourcing circular</h3>
-        <p>Identificar oportunidades de equipos profesionales en el mercado secundario y proveerlos con factura.</p>
-    </div>
-</section>
-
-<section class="opportunity" id="opportunity">
-    <h2 lang="fr">Vous avez repéré un équipement intéressant ?</h2>
-    <p lang="fr">Si vous identifiez un équipement auprès d’un particulier ou sur une plateforme de vente, nous pouvons analyser l’opportunité, négocier l’achat et vous fournir l’équipement avec facture.</p>
-    <ol lang="fr">
-        <li>Envoyer l’information</li>
-        <li>Analyse de l’opportunité</li>
-        <li>Négociation avec le vendeur</li>
-        <li>Achat et revente avec facture</li>
-    </ol>
-
-    <h2 lang="en">Did you spot interesting equipment?</h2>
-    <p lang="en">If you find equipment from a private seller or marketplace, we can analyze the opportunity, negotiate the purchase, and provide it with invoice.</p>
-    <ol lang="en">
-        <li>Send the information</li>
-        <li>Analyze the opportunity</li>
-        <li>Negotiate with the seller</li>
-        <li>Purchase and resale with invoice</li>
-    </ol>
-
-    <h2 lang="es">¿Ha encontrado un equipo interesante?</h2>
-    <p lang="es">Si encuentra un equipo de un vendedor particular o mercado, podemos analizar la oportunidad, negociar la compra y proveerlo con factura.</p>
-    <ol lang="es">
-        <li>Enviar la información</li>
-        <li>Analizar la oportunidad</li>
-        <li>Negociar con el vendedor</li>
-        <li>Compra y reventa con factura</li>
-    </ol>
-</section>
-
-<section class="sell-equipment" id="sell">
-    <h2 lang="fr">Vous avez du matériel à vendre ?</h2>
-    <p lang="fr">Entreprises ou particuliers peuvent proposer du matériel. Nous analysons les équipements disponibles et identifions des entreprises susceptibles d’être intéressées.</p>
-
-    <h2 lang="en">Do you have equipment to sell?</h2>
-    <p lang="en">Companies or individuals can propose equipment. We analyze available equipment and identify interested businesses.</p>
-
-    <h2 lang="es">¿Tiene material para vender?</h2>
-    <p lang="es">Empresas o particulares pueden proponer equipos. Analizamos el material disponible y encontramos compradores interesados.</p>
-
-    <form action="mailto:info@torrentetrade.ch" method="post" enctype="text/plain">
-        <input type="email" name="email" placeholder="Votre email / Your email / Su email" required>
-        <textarea name="message" placeholder="Décrivez le matériel à vendre ou votre demande / Describe the equipment or your request / Describa el material o su solicitud"></textarea>
-        <button type="submit">Envoyer / Send / Enviar</button>
-    </form>
-</section>
-
-<footer id="contact">
-    <p lang="fr">Torrente Trade & Advice - Chemin des Uttins 21, 1183 Bursins, Suisse</p>
-    <p lang="en">Torrente Trade & Advice - Chemin des Uttins 21, 1183 Bursins, Switzerland</p>
-    <p lang="es">Torrente Trade & Advice - Chemin des Uttins 21, 1183 Bursins, Suiza</p>
-    <p>Contact: <a href="mailto:info@torrentetrade.ch">info@torrentetrade.ch</a></p>
-</footer>
+</main>
 
 <script>
-function changeLang(lang){
-    document.querySelectorAll('[lang]').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('[lang="'+lang+'"]').forEach(el => el.style.display = 'block');
+function setLanguage(lang) {
+    const sections = document.querySelectorAll('.lang');
+    sections.forEach(sec => sec.style.display = 'none');
+    document.querySelector('.' + lang).style.display = 'block';
 }
-// Inicializa en francés
-changeLang('fr');
+
+// Mostrar francés al cargar
+setLanguage('fr');
 </script>
 
 </body>
