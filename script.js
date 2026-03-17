@@ -1,13 +1,13 @@
-// Cambio idioma
+// LANGUAGES
 function setLang(lang){
 document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
 document.querySelector('.'+lang).style.display='block';
 }
 
-// Idioma por defecto
+// DEFAULT LANG
 setLang('fr');
 
-// Animaciones scroll
+// SCROLL ANIMATION
 const faders = document.querySelectorAll('.fade');
 
 const observer = new IntersectionObserver(entries=>{
