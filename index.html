@@ -30,10 +30,7 @@ box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo{
-font-weight:700;
-font-size:20px;
-color:#0a2540;
-text-decoration:none;
+height:50px;
 }
 
 nav{
@@ -48,11 +45,7 @@ color:#0a2540;
 font-weight:500;
 }
 
-/* LANGUAGE */
-
-.lang{
-margin-left:30px;
-}
+/* LANG */
 
 .lang button{
 margin-left:5px;
@@ -63,17 +56,29 @@ background:#eaeaea;
 border-radius:4px;
 }
 
-.lang button:hover{
-background:#d0d0d0;
-}
-
 /* HERO */
 
 .hero{
-padding:100px 20px;
+position:relative;
+padding:120px 20px;
 text-align:center;
-background:linear-gradient(120deg,#0a2540,#1e3a5f);
 color:white;
+background:url('images/fabrica.png') center/cover no-repeat;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(10,37,64,0.75);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
 }
 
 .hero h1{
@@ -101,7 +106,7 @@ font-weight:600;
 cursor:pointer;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
 padding:80px 20px;
@@ -112,7 +117,6 @@ margin:auto;
 .section h2{
 text-align:center;
 margin-bottom:40px;
-font-size:32px;
 }
 
 /* CARDS */
@@ -126,11 +130,17 @@ justify-content:center;
 
 .card{
 background:white;
-padding:30px;
+padding:20px;
 border-radius:10px;
 width:300px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transition:0.3s;
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+margin-bottom:15px;
 }
 
 .card:hover{
@@ -141,10 +151,20 @@ transform:translateY(-8px);
 
 .process{
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
-gap:40px;
+gap:30px;
+justify-content:center;
 text-align:center;
+}
+
+.step{
+max-width:250px;
+}
+
+.step img{
+width:100%;
+border-radius:8px;
+margin-bottom:10px;
 }
 
 /* CONTACT */
@@ -171,8 +191,6 @@ border-radius:6px;
 border:none;
 }
 
-/* BOTÓN GRANDE */
-
 button.submit{
 background:white;
 color:#0a2540;
@@ -181,12 +199,6 @@ padding:16px;
 font-size:16px;
 border-radius:6px;
 cursor:pointer;
-transition:0.2s;
-}
-
-button.submit:hover{
-transform:translateY(-2px);
-box-shadow:0 6px 12px rgba(0,0,0,0.2);
 }
 
 /* FOOTER */
@@ -206,12 +218,14 @@ color:white;
 
 <header>
 
-<a href="#" class="logo">Torrente Trade & Advice</a>
+<a href="#">
+<img src="images/logo1.png" class="logo">
+</a>
 
 <nav>
-<a href="#services" data-fr="Services" data-en="Services" data-es="Servicios">Services</a>
-<a href="#process" data-fr="Processus" data-en="Process" data-es="Proceso">Processus</a>
-<a href="#contact" data-fr="Contact" data-en="Contact" data-es="Contacto">Contact</a>
+<a href="#services">Services</a>
+<a href="#process">Processus</a>
+<a href="#contact">Contact</a>
 
 <div class="lang">
 <button onclick="setLang('fr')">FR</button>
@@ -225,50 +239,45 @@ color:white;
 
 <section class="hero">
 
-<h1 data-fr="Optimisation des processus et réduction des coûts"
-    data-en="Process optimization and cost reduction"
-    data-es="Optimización de procesos y reducción de costos">
+<div class="hero-content">
 
-Optimisation des processus et réduction des coûts
-</h1>
+<h1>Optimisation des processus et réduction des coûts</h1>
 
-<p data-fr="Nous aidons les entreprises à améliorer leurs opérations et réduire leurs coûts."
-   data-en="We help companies improve operations and reduce costs."
-   data-es="Ayudamos a las empresas a mejorar sus operaciones y reducir costos.">
-
-Nous aidons les entreprises à améliorer leurs opérations et réduire leurs coûts.
+<p>
+Nous aidons les PME à améliorer leurs opérations et accéder
+à des équipements professionnels à forte valeur.
 </p>
 
-<button onclick="location.href='#contact'"
-data-fr="Nous contacter"
-data-en="Contact us"
-data-es="Contáctanos">
-
+<button onclick="location.href='#contact'">
 Nous contacter
-
 </button>
+
+</div>
 
 </section>
 
 <section id="services" class="section">
 
-<h2 data-fr="Nos services" data-en="Our services" data-es="Nuestros servicios">Nos services</h2>
+<h2>Nos services</h2>
 
 <div class="services">
 
 <div class="card">
-<h3 data-fr="Optimisation des processus" data-en="Process optimization" data-es="Optimización de procesos"></h3>
-<p data-fr="Amélioration des flux et performance." data-en="Improve workflows and performance." data-es="Mejora de procesos y rendimiento."></p>
+<img src="images/tableta gráfico.png">
+<h3>Optimisation des processus</h3>
+<p>Analyse et amélioration des flux opérationnels.</p>
 </div>
 
 <div class="card">
-<h3 data-fr="Optimisation des coûts" data-en="Cost optimization" data-es="Optimización de costos"></h3>
-<p data-fr="Réduction des dépenses et efficacité." data-en="Reduce costs and increase efficiency." data-es="Reducción de costos y eficiencia."></p>
+<img src="images/management.png">
+<h3>Optimisation des coûts</h3>
+<p>Réduction des coûts et amélioration de la performance.</p>
 </div>
 
 <div class="card">
-<h3 data-fr="Sourcing circulaire" data-en="Circular sourcing" data-es="Sourcing circular"></h3>
-<p data-fr="Accès au marché secondaire." data-en="Access secondary equipment market." data-es="Acceso a equipos de segunda mano."></p>
+<img src="images/fabrica 2.png">
+<h3>Sourcing circulaire</h3>
+<p>Accès au marché secondaire sécurisé.</p>
 </div>
 
 </div>
@@ -277,21 +286,45 @@ Nous contacter
 
 <section id="process" class="section">
 
-<h2 data-fr="Comment ça fonctionne" data-en="How it works" data-es="Cómo funciona">Comment ça fonctionne</h2>
+<h2>Comment ça fonctionne</h2>
 
 <div class="process">
 
-<div>1. Analyse</div>
-<div>2. Négociation</div>
-<div>3. Achat sécurisé</div>
+<div class="step">
+<img src="images/man con diagrama.png">
+<p>Analyse de l’opportunité</p>
+</div>
+
+<div class="step">
+<img src="images/man explica.png">
+<p>Négociation et validation</p>
+</div>
+
+<div class="step">
+<img src="images/taller.png">
+<p>Achat et livraison</p>
+</div>
 
 </div>
 
 </section>
 
+<section class="section">
+
+<h2>Approche collaborative</h2>
+
+<img src="images/juego.png" style="width:100%;max-width:600px;display:block;margin:auto;border-radius:10px;">
+
+<p style="text-align:center;max-width:700px;margin:20px auto;">
+Nous travaillons en collaboration avec nos clients pour générer
+des résultats concrets et durables.
+</p>
+
+</section>
+
 <section id="contact" class="contact">
 
-<h2 data-fr="Contact" data-en="Contact" data-es="Contacto">Contact</h2>
+<h2>Contact</h2>
 
 <form>
 
@@ -299,13 +332,8 @@ Nous contacter
 <input type="email" placeholder="Email">
 <textarea rows="5" placeholder="Message"></textarea>
 
-<button class="submit"
-data-fr="Envoyer votre demande"
-data-en="Send your request"
-data-es="Enviar solicitud">
-
+<button class="submit">
 Envoyer votre demande
-
 </button>
 
 </form>
@@ -315,19 +343,16 @@ Envoyer votre demande
 <footer>
 
 Torrente Trade & Advice<br>
-Chemin des Uttins 21 – Suisse<br>
 info@torrentetrade.ch
 
 </footer>
 
 <script>
-
 function setLang(lang){
 document.querySelectorAll("[data-fr]").forEach(el=>{
 el.innerText = el.getAttribute("data-" + lang);
 });
 }
-
 </script>
 
 </body>
