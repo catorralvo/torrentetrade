@@ -114,6 +114,16 @@ margin-left:auto;
 margin-right:auto;
 }
 
+/* BUTTON */
+
+button{
+transition:0.2s;
+}
+
+button:hover{
+transform:translateY(-2px);
+}
+
 .hero button{
 margin-top:30px;
 padding:14px 30px;
@@ -139,7 +149,7 @@ margin-bottom:40px;
 font-size:32px;
 }
 
-/* CARDS */
+/* SERVICES */
 
 .services{
 display:flex;
@@ -147,6 +157,8 @@ flex-wrap:wrap;
 gap:30px;
 justify-content:center;
 }
+
+/* CARDS */
 
 .card{
 background:white;
@@ -216,15 +228,7 @@ border-radius:6px;
 border:none;
 }
 
-/* BUTTON */
-
-button{
-transition:0.2s;
-}
-
-button:hover{
-transform:translateY(-2px);
-}
+/* SUBMIT */
 
 button.submit{
 background:white;
@@ -262,9 +266,9 @@ color:white;
 </a>
 
 <nav>
-<a href="#services">Services</a>
-<a href="#process">Processus</a>
-<a href="#contact">Contact</a>
+<a href="#services" data-fr="Services" data-en="Services" data-es="Servicios">Services</a>
+<a href="#process" data-fr="Processus" data-en="Process" data-es="Proceso">Processus</a>
+<a href="#contact" data-fr="Contact" data-en="Contact" data-es="Contacto">Contact</a>
 
 <div class="lang">
 <button onclick="setLang('fr')">FR</button>
@@ -280,14 +284,24 @@ color:white;
 
 <div class="hero-content">
 
-<h1>Optimisation des processus et réduction des coûts</h1>
+<h1 
+data-fr="Optimisation des processus et réduction des coûts"
+data-en="Process optimization and cost reduction"
+data-es="Optimización de procesos y reducción de costos">
+Optimisation des processus et réduction des coûts
+</h1>
 
-<p>
-Nous aidons les PME à améliorer leurs opérations et accéder
-à des équipements professionnels à forte valeur.
+<p 
+data-fr="Nous aidons les PME à améliorer leurs opérations et accéder à des équipements professionnels."
+data-en="We help SMEs improve operations and access professional equipment."
+data-es="Ayudamos a las pymes a mejorar sus operaciones y acceder a equipos profesionales.">
+Nous aidons les PME à améliorer leurs opérations et accéder à des équipements professionnels.
 </p>
 
-<button onclick="location.href='#contact'">
+<button onclick="location.href='#contact'"
+data-fr="Nous contacter"
+data-en="Contact us"
+data-es="Contáctanos">
 Nous contacter
 </button>
 
@@ -297,26 +311,26 @@ Nous contacter
 
 <section id="services" class="section">
 
-<h2>Nos services</h2>
+<h2 data-fr="Nos services" data-en="Our services" data-es="Nuestros servicios">Nos services</h2>
 
 <div class="services">
 
 <div class="card">
 <img src="tableta.png">
-<h3>Optimisation des processus</h3>
-<p>Analyse et amélioration des flux opérationnels.</p>
+<h3 data-fr="Optimisation des processus" data-en="Process optimization" data-es="Optimización de procesos">Optimisation des processus</h3>
+<p data-fr="Analyse et amélioration des flux opérationnels." data-en="Analysis and improvement of workflows." data-es="Análisis y mejora de procesos.">Analyse et amélioration des flux opérationnels.</p>
 </div>
 
 <div class="card">
 <img src="management.png">
-<h3>Optimisation des coûts</h3>
-<p>Réduction des coûts et amélioration de la performance.</p>
+<h3 data-fr="Optimisation des coûts" data-en="Cost optimization" data-es="Optimización de costos">Optimisation des coûts</h3>
+<p data-fr="Réduction des coûts et amélioration de la performance." data-en="Cost reduction and performance improvement." data-es="Reducción de costos y mejora del rendimiento.">Réduction des coûts et amélioration de la performance.</p>
 </div>
 
 <div class="card">
 <img src="fabrica2.png">
-<h3>Sourcing circulaire</h3>
-<p>Accès au marché secondaire sécurisé.</p>
+<h3 data-fr="Sourcing circulaire" data-en="Circular sourcing" data-es="Sourcing circular">Sourcing circulaire</h3>
+<p data-fr="Accès au marché secondaire sécurisé." data-en="Secure access to secondary market." data-es="Acceso seguro al mercado de segunda mano.">Accès au marché secondaire sécurisé.</p>
 </div>
 
 </div>
@@ -325,23 +339,23 @@ Nous contacter
 
 <section id="process" class="section">
 
-<h2>Comment ça fonctionne</h2>
+<h2 data-fr="Comment ça fonctionne" data-en="How it works" data-es="Cómo funciona">Comment ça fonctionne</h2>
 
 <div class="process">
 
 <div class="step">
 <img src="diagrama.png">
-<p>Analyse de l’opportunité</p>
+<p>Analyse</p>
 </div>
 
 <div class="step">
 <img src="explica.png">
-<p>Négociation et validation</p>
+<p>Négociation</p>
 </div>
 
 <div class="step">
 <img src="taller.png">
-<p>Achat et livraison</p>
+<p>Achat sécurisé</p>
 </div>
 
 </div>
@@ -350,31 +364,31 @@ Nous contacter
 
 <section class="section">
 
-<h2>Approche collaborative</h2>
+<h2 data-fr="Approche collaborative" data-en="Collaborative approach" data-es="Enfoque colaborativo">Approche collaborative</h2>
 
 <img src="juego.png" style="width:100%;max-width:600px;display:block;margin:auto;border-radius:10px;">
 
 <p style="text-align:center;max-width:700px;margin:20px auto;">
-Nous travaillons en collaboration avec nos clients pour générer
-des résultats concrets et durables.
+Collaboration et performance durable.
 </p>
 
 </section>
 
 <section id="contact" class="contact">
 
-<h2>Contact</h2>
+<h2 data-fr="Contact" data-en="Contact" data-es="Contacto">Contact</h2>
 
 <form>
-
 <input type="text" placeholder="Nom">
 <input type="email" placeholder="Email">
 <textarea rows="5" placeholder="Message"></textarea>
 
-<button class="submit">
+<button class="submit"
+data-fr="Envoyer votre demande"
+data-en="Send your request"
+data-es="Enviar solicitud">
 Envoyer votre demande
 </button>
-
 </form>
 
 </section>
@@ -387,11 +401,13 @@ info@torrentetrade.ch
 </footer>
 
 <script>
+
 function setLang(lang){
 document.querySelectorAll("[data-fr]").forEach(el=>{
 el.innerText = el.getAttribute("data-" + lang);
 });
 }
+
 </script>
 
 </body>
