@@ -5,261 +5,249 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Torrente Trade & Advice | Conseil opérationnel & opportunités industrielles</title>
-
 <meta name="description" content="Réduisez vos coûts et accédez aux meilleures opportunités industrielles. Conseil opérationnel et sourcing d’équipements professionnels.">
 <meta name="keywords" content="optimisation coûts, lean management suisse, machines occasion, sourcing industriel, conseil opérationnel">
 <meta name="author" content="Torrente Trade & Advice">
 
 <meta property="og:title" content="Torrente Trade & Advice">
 <meta property="og:description" content="Conseil opérationnel & opportunités industrielles">
-<meta property="og:image" content="logo1.png">
+<meta property="og:image" content="Logo1.png">
 <meta property="og:type" content="website">
 
-<link rel="icon" href="logo1.png">
+<link rel="icon" href="Logo1.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 /* GLOBAL */
-body {
-    margin:0;
-    font-family:'Inter', sans-serif;
-    background:#f4f6f9;
-    color:#1a1a1a;
-    line-height:1.6;
+body{
+margin:0;
+font-family:'Inter', sans-serif;
+background:#f4f6f9;
+color:#1a1a1a;
+line-height:1.6;
+scroll-behavior:smooth;
 }
 
 /* HEADER */
-header {
-    position:sticky;
-    top:0;
-    background:white;
-    text-align:center;
-    padding:15px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    z-index:1000;
+header{
+position:sticky;
+top:0;
+background:white;
+text-align:center;
+padding:20px 0;
+box-shadow:0 2px 15px rgba(0,0,0,0.08);
+z-index:1000;
 }
-
-header img.logo {
-    height:120px;
+header img.logo{
+height:140px;
+margin-bottom:10px;
 }
-
-.lang {
-    margin-top:10px;
+.lang button{
+border:none;
+background:#eee;
+padding:6px 12px;
+margin:3px;
+cursor:pointer;
+border-radius:20px;
+font-size:12px;
+transition:0.3s;
 }
-
-.lang button {
-    border:none;
-    background:#003366;
-    color:white;
-    padding:6px 12px;
-    margin:3px;
-    cursor:pointer;
-    border-radius:20px;
-    font-size:12px;
-}
-
-.lang button:hover {
-    background:#0055a5;
-}
+.lang button:hover{background:#003366;color:white;}
 
 /* HERO */
-.hero {
-    text-align:center;
-    padding:80px 20px 60px;
+.hero{
+text-align:center;
+padding:80px 20px 60px;
+background:linear-gradient(135deg,#e0f7fa,#b2ebf2);
+border-radius:20px;
+margin:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
 }
-
-.hero img {
-    max-width:80%;
-    height:auto;
-    margin-bottom:20px;
-    border-radius:15px;
+.hero img{
+max-width:100%;
+height:auto;
+border-radius:15px;
+margin-bottom:20px;
 }
-
-.hero h1 {
-    font-size:38px;
-    max-width:800px;
-    margin:auto;
+.hero h1{
+font-size:40px;
+max-width:900px;
+margin:auto;
+font-weight:600;
 }
-
-.hero p {
-    font-size:18px;
-    max-width:600px;
-    margin:20px auto;
-    color:#555;
+.hero p{
+font-size:18px;
+max-width:700px;
+margin:20px auto;
+color:#333;
 }
-
-.tagline {
-    margin-top:20px;
-    font-weight:600;
-    color:#003366;
+.tagline{
+margin-top:20px;
+font-weight:600;
+color:#003366;
 }
 
 /* CTA */
-.cta {
-    margin-top:25px;
+.cta{
+margin-top:25px;
 }
-
-.cta a {
-    background:#003366;
-    color:white;
-    padding:12px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    transition:0.3s;
+.cta a{
+background:#003366;
+color:white;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
+transition:0.3s;
+font-weight:600;
 }
-
-.cta a:hover {
-    background:#0055a5;
-}
+.cta a:hover{background:#0055a5;transform:translateY(-3px);}
 
 /* SECTIONS */
-.section {
-    padding:60px 20px;
-    text-align:center;
-    max-width:1000px;
-    margin:auto;
+.section{
+padding:60px 20px;
+text-align:center;
+max-width:1000px;
+margin:auto;
+border-radius:20px;
+box-shadow:0 5px 25px rgba(0,0,0,0.05);
+background:white;
+margin-bottom:40px;
 }
-
-.cards {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 }
-
-.card {
-    background:white;
-    padding:25px;
-    margin:15px;
-    border-radius:15px;
-    width:280px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    transition:0.3s;
+.card{
+background:white;
+padding:25px;
+margin:15px;
+border-radius:15px;
+width:280px;
+box-shadow:0 5px 25px rgba(0,0,0,0.08);
+transition:0.5s;
+overflow:hidden;
 }
-
-.card img {
-    max-width:100%;
-    height:auto;
-    margin-bottom:15px;
-    border-radius:10px;
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+transition:0.5s;
 }
-
-.card:hover {
-    transform:translateY(-8px);
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+.card:hover img{
+transform:scale(1.05);
 }
 
 /* PROCESS */
-.process ul {
-    list-style:none;
-    padding:0;
+.process img{
+width:100%;
+height:auto;
+max-width:900px;
+border-radius:15px;
+margin-bottom:15px;
+transform:translateY(0);
+transition:0.5s;
 }
-
-.process li {
-    margin:10px 0;
-}
+.process ul{list-style:none;padding:0;margin-top:20px;}
+.process li{margin:12px 0;font-weight:500;}
 
 /* BLOCKS */
-.block {
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    margin:20px auto;
-    max-width:800px;
+.block{
+background:#f0f4f8;
+padding:40px;
+border-radius:15px;
+margin:20px auto;
+max-width:800px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
 /* CONTACT */
 .contact input,
 .contact select,
-.contact textarea {
-    width:90%;
-    max-width:400px;
-    margin:10px;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
+.contact textarea{
+width:90%;
+max-width:400px;
+margin:10px;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:14px;
 }
-
-.contact button {
-    background:#003366;
-    color:white;
-    padding:12px 30px;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
+.contact button{
+background:#003366;
+color:white;
+padding:12px 30px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
 }
+.contact button:hover{background:#0055a5;transform:translateY(-2px);}
 
 /* WHATSAPP */
-.whatsapp {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    font-size:28px;
-    padding:15px;
-    border-radius:50%;
-    text-decoration:none;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:28px;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+transition:0.3s;
 }
+.whatsapp:hover{transform:scale(1.1);}
 
 /* FOOTER */
-footer {
-    text-align:center;
-    padding:30px;
-    font-size:14px;
-    color:#777;
-    background:#f4f6f9;
+footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+color:#777;
+background:#fff;
+margin-top:50px;
 }
 
 /* ANIMATIONS */
-.fade {
-    opacity:0;
-    transform:translateY(20px);
-    transition:1s;
-}
-
-.fade.show {
-    opacity:1;
-    transform:translateY(0);
-}
+.fade{opacity:0;transform:translateY(20px);transition:1s;}
+.fade.show{opacity:1;transform:translateY(0);}
 
 @media(max-width:768px){
-    .hero h1{
-        font-size:28px;
-    }
-    .cards{
-        flex-direction:column;
-        align-items:center;
-    }
+.hero h1{font-size:30px;}
+.cards{flex-direction:column;align-items:center;}
+.card img{height:auto;}
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <img src="logo1.png" class="logo" alt="Torrente Trade & Advice">
-    <div class="lang">
-        <button onclick="setLang('fr')">FR</button>
-        <button onclick="setLang('en')">EN</button>
-        <button onclick="setLang('es')">ES</button>
-    </div>
+<img src="Logo1.png" class="logo" alt="Torrente Trade & Advice">
+<div class="lang">
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+</div>
 </header>
 
-<!-- FRANCÉS -->
-<section class="lang fr">
-
+<!-- FR -->
+<section class="lang-section fr">
 <div class="hero fade">
-    <img src="Fabrica.jpg" alt="Bureau de conseil">
-    <h1>Réduisez vos coûts. Accédez aux bonnes opportunités.</h1>
-    <p>Nous identifions où votre entreprise perd de l’argent et vous connectons aux meilleures opportunités industrielles.</p>
-    <div class="tagline">Approche terrain. Résultats mesurables. Zéro complexité inutile.</div>
-    <div class="cta">
-        <a href="#contact">Discuter d’un projet</a>
-    </div>
+<img src="Fabrica.jpg" alt="Fábrica">
+<h1>Réduisez vos coûts et optimisez vos opérations</h1>
+<p>Nous accompagnons les entreprises pour améliorer leurs processus, réduire les coûts et identifier les opportunités industrielles.</p>
+<div class="tagline">Approche terrain • Résultats mesurables • Zéro complexité inutile</div>
+<div class="cta"><a href="#contact">Discuter d’un projet</a></div>
 </div>
 
 <div class="section fade">
@@ -268,53 +256,46 @@ footer {
 <div class="card">
 <img src="Tableta.png" alt="Optimisation des processus">
 <h3>Optimisation des processus</h3>
-<p>Identification des inefficacités opérationnelles.</p>
-<strong>-20% de gains possibles</strong>
+<p>Analyse des flux opérationnels pour gagner en efficacité et réduire les coûts.</p>
 </div>
 <div class="card">
 <img src="Juego.jpg" alt="Optimisation des coûts">
 <h3>Optimisation des coûts</h3>
-<p>Révélation des pertes invisibles.</p>
-<strong>Vision claire immédiate</strong>
+<p>Identification des pertes et opportunités d'économie.</p>
 </div>
 <div class="card">
 <img src="Taller.jpg" alt="Sourcing circulaire">
 <h3>Sourcing circulaire</h3>
-<p>Accès à des équipements industriels.</p>
-<strong>Jusqu’à -50% du marché</strong>
+<p>Identification et acquisition d’équipements professionnels sur le marché secondaire.</p>
 </div>
 </div>
 </div>
 
-<div class="section fade">
+<div class="section fade process">
 <h2>Notre approche</h2>
-<img src="diagrama .png" alt="Notre approche" style="max-width:80%;border-radius:15px;">
-<p>Nous analysons vos processus, optimisons vos opérations et identifions les opportunités d’achat ou de vente d’équipements industriels.</p>
+<img src="explica.png" alt="Notre approche">
+<p>Nous analysons vos besoins, proposons un plan d’action clair et exécutons rapidement pour des résultats concrets.</p>
 </div>
 
 <div class="block fade">
 <h2>Achat d’équipement</h2>
-<p>Nous trouvons, négocions et sécurisons les meilleures opportunités pour votre entreprise avec facture.</p>
+<p>Pour toute entreprise souhaitant acquérir des équipements de seconde main avec facture, nous trouvons et sécurisons la meilleure opportunité.</p>
 </div>
 
 <div class="block fade">
 <h2>Vente de machine</h2>
-<p>Particuliers ou entreprises peuvent proposer des machines; nous connectons rapidement votre équipement à des acheteurs qualifiés.</p>
+<p>Si vous êtes un particulier ou une entreprise souhaitant proposer une machine, nous la connectons immédiatement à des acheteurs qualifiés.</p>
 </div>
-
 </section>
 
-<!-- INGLÉS -->
-<section class="lang en">
-
+<!-- EN -->
+<section class="lang-section en">
 <div class="hero fade">
-    <img src="Fabrica.jpg" alt="Consulting Office">
-    <h1>Reduce Costs. Access the Right Opportunities.</h1>
-    <p>We identify where your company loses money and connect you to the best industrial opportunities.</p>
-    <div class="tagline">Field approach. Measurable results. No unnecessary complexity.</div>
-    <div class="cta">
-        <a href="#contact">Discuss a Project</a>
-    </div>
+<img src="Fabrica.jpg" alt="Factory">
+<h1>Reduce Costs and Optimize Operations</h1>
+<p>We help businesses improve processes, reduce costs, and identify industrial opportunities.</p>
+<div class="tagline">Hands-on approach • Measurable results • Zero unnecessary complexity</div>
+<div class="cta"><a href="#contact">Discuss a Project</a></div>
 </div>
 
 <div class="section fade">
@@ -323,53 +304,46 @@ footer {
 <div class="card">
 <img src="Tableta.png" alt="Process Optimization">
 <h3>Process Optimization</h3>
-<p>Identify operational inefficiencies.</p>
-<strong>-20% potential gains</strong>
+<p>Analyze workflows to improve efficiency and reduce costs.</p>
 </div>
 <div class="card">
 <img src="Juego.jpg" alt="Cost Optimization">
 <h3>Cost Optimization</h3>
-<p>Reveal hidden losses.</p>
-<strong>Immediate clear vision</strong>
+<p>Identify invisible losses and savings opportunities.</p>
 </div>
 <div class="card">
 <img src="Taller.jpg" alt="Circular Sourcing">
 <h3>Circular Sourcing</h3>
-<p>Access to industrial equipment.</p>
-<strong>Up to 50% savings</strong>
+<p>Identify and acquire professional equipment on the secondary market.</p>
 </div>
 </div>
 </div>
 
-<div class="section fade">
+<div class="section fade process">
 <h2>Our Approach</h2>
-<img src="diagrama .png" alt="Our Approach" style="max-width:80%;border-radius:15px;">
-<p>We analyze your processes, optimize operations, and identify opportunities to buy or sell industrial equipment.</p>
+<img src="explica.png" alt="Our approach">
+<p>We analyze your needs, propose a clear action plan, and execute quickly for tangible results.</p>
 </div>
 
 <div class="block fade">
 <h2>Equipment Purchase</h2>
-<p>We find, negotiate, and secure the best opportunities for your company with invoice.</p>
+<p>For any company wishing to acquire second-hand equipment with invoice, we find and secure the best opportunities.</p>
 </div>
 
 <div class="block fade">
 <h2>Equipment Sale</h2>
-<p>Individuals or companies can propose machines; we quickly connect your equipment to qualified buyers.</p>
+<p>If you are an individual or company wanting to offer equipment, we connect it immediately to qualified buyers.</p>
 </div>
-
 </section>
 
-<!-- ESPAÑOL -->
-<section class="lang es">
-
+<!-- ES -->
+<section class="lang-section es">
 <div class="hero fade">
-    <img src="Fabrica.jpg" alt="Oficina de consultoría">
-    <h1>Reduzca costos. Acceda a las oportunidades correctas.</h1>
-    <p>Identificamos dónde su empresa pierde dinero y lo conectamos con las mejores oportunidades industriales.</p>
-    <div class="tagline">Enfoque de campo. Resultados medibles. Sin complejidad innecesaria.</div>
-    <div class="cta">
-        <a href="#contact">Discutir un proyecto</a>
-    </div>
+<img src="Fabrica.jpg" alt="Fábrica">
+<h1>Reduzca costos y optimice operaciones</h1>
+<p>Ayudamos a empresas a mejorar procesos, reducir costos y encontrar oportunidades industriales.</p>
+<div class="tagline">Enfoque práctico • Resultados medibles • Cero complejidad innecesaria</div>
+<div class="cta"><a href="#contact">Discutir un proyecto</a></div>
 </div>
 
 <div class="section fade">
@@ -378,85 +352,79 @@ footer {
 <div class="card">
 <img src="Tableta.png" alt="Optimización de procesos">
 <h3>Optimización de procesos</h3>
-<p>Identificación de ineficiencias operativas.</p>
-<strong>-20% de ganancias posibles</strong>
+<p>Analizamos los flujos operativos para aumentar eficiencia y reducir costos.</p>
 </div>
 <div class="card">
 <img src="Juego.jpg" alt="Optimización de costos">
 <h3>Optimización de costos</h3>
-<p>Revelación de pérdidas invisibles.</p>
-<strong>Visión clara inmediata</strong>
+<p>Identificamos pérdidas y oportunidades de ahorro.</p>
 </div>
 <div class="card">
 <img src="Taller.jpg" alt="Sourcing circular">
 <h3>Sourcing circular</h3>
-<p>Acceso a equipamiento industrial.</p>
-<strong>Hasta -50% del mercado</strong>
+<p>Identificamos y adquirimos equipamiento profesional del mercado secundario.</p>
 </div>
 </div>
 </div>
 
-<div class="section fade">
+<div class="section fade process">
 <h2>Nuestro enfoque</h2>
-<img src="diagrama .png" alt="Nuestro enfoque" style="max-width:80%;border-radius:15px;">
-<p>Analizamos sus procesos, optimizamos sus operaciones e identificamos oportunidades de compra o venta de equipos industriales.</p>
+<img src="explica.png" alt="Nuestro enfoque">
+<p>Analizamos sus necesidades, proponemos un plan claro y ejecutamos rápido para resultados concretos.</p>
 </div>
 
 <div class="block fade">
 <h2>Compra de equipo</h2>
-<p>Encontramos, negociamos y aseguramos las mejores oportunidades para su empresa con factura.</p>
+<p>Para cualquier empresa que desee adquirir equipos de segunda mano con factura, encontramos y aseguramos la mejor oportunidad.</p>
 </div>
 
 <div class="block fade">
 <h2>Venta de máquina</h2>
-<p>Particulares o empresas pueden proponer máquinas; conectamos rápidamente su equipo con compradores calificados.</p>
+<p>Si eres particular o empresa y quieres proponer una máquina, la conectamos de inmediato con compradores calificados.</p>
 </div>
-
 </section>
 
-<!-- CONTACTO -->
+<!-- CONTACT -->
 <div class="section contact fade" id="contact">
 <h2>Contacto</h2>
 <form action="https://formspree.io/f/xaqpledl" method="POST">
-<input type="email" name="email" placeholder="Su email" required>
+<input type="email" name="email" placeholder="Tu email" required>
 <select name="type">
 <option>Consulting</option>
 <option>Compra</option>
 <option>Venta</option>
 </select>
-<textarea name="message" placeholder="Su mensaje" required></textarea>
+<textarea name="message" placeholder="Tu mensaje" required></textarea>
 <button>Enviar</button>
 </form>
 </div>
 
-<!-- WHATSAPP -->
+<!-- WhatsApp -->
 <a href="https://wa.me/41787313361?text=Hola,%20quiero%20discutir%20una%20oportunidad%20(Torrentetrade)" class="whatsapp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<!-- FOOTER -->
 <footer>
 © 2026 Torrente Trade & Advice | <a href="mailto:info@torrentetrade.ch">info@torrentetrade.ch</a>
 </footer>
 
 <script>
-// Idiomas
+// idioma
 function setLang(lang){
-    document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
-    document.querySelector('.'+lang).style.display='block';
+document.querySelectorAll('.lang-section').forEach(el=>el.style.display='none');
+document.querySelector('.'+lang).style.display='block';
 }
-setLang('fr');
+setLang('fr'); // Francés por defecto
 
-// Animaciones fade-in
+// animaciones
 const faders = document.querySelectorAll('.fade');
 const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('show');}
+});
 });
 faders.forEach(el=>observer.observe(el));
 </script>
-
 </body>
 </html>
