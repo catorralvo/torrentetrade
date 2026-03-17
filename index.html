@@ -3,17 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Torrente Trade & Advice | Conseil opérationnel & opportunités industrielles</title>
 <meta name="description" content="Réduisez vos coûts et accédez aux meilleures opportunités industrielles. Conseil opérationnel et sourcing d’équipements professionnels.">
 <meta name="keywords" content="optimisation coûts, lean management suisse, machines occasion, sourcing industriel, conseil opérationnel">
 <meta name="author" content="Torrente Trade & Advice">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.torrentetrade.ch/">
+
 <meta property="og:title" content="Torrente Trade & Advice">
 <meta property="og:description" content="Conseil opérationnel & opportunités industrielles">
 <meta property="og:image" content="Logo1.png">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.torrentetrade.ch/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Torrente Trade & Advice">
+<meta name="twitter:description" content="Conseil opérationnel & opportunités industrielles">
+<meta name="twitter:image" content="Logo1.png">
+<meta name="twitter:site" content="@TorrenteTrade">
+
 <link rel="icon" href="Logo1.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Structured Data JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Torrente Trade & Advice",
+  "url": "https://www.torrentetrade.ch/",
+  "logo": "https://www.torrentetrade.ch/Logo1.png",
+  "sameAs": [
+    "https://www.linkedin.com/company/torrentetrade"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+41787313361",
+    "contactType": "customer service",
+    "email": "info@torrentetrade.ch",
+    "availableLanguage": ["FR","EN","ES"]
+  }
+}
+</script>
 
 <style>
 /* GLOBAL */
@@ -32,42 +65,35 @@ header{
 }
 
 header img.logo{
-  max-width:220px;
-  height:auto;
+  max-height:120px;
 }
 
-.lang-buttons{
+.lang{
   margin-top:10px;
 }
 
-.lang-buttons button{
+.lang button{
   border:none;
-  background:#e0e0e0;
-  padding:6px 14px;
+  background:#ccc;
+  padding:6px 12px;
   margin:3px;
   cursor:pointer;
   border-radius:20px;
-  font-size:13px;
+  font-size:12px;
 }
 
-.lang-buttons button:hover{
-  background:#cfcfcf;
+.lang button:hover{
+  background:#999;
 }
 
 /* HERO */
 .hero{
   text-align:center;
-  padding:60px 20px 40px;
-}
-
-.hero img{
-  max-width:100%;
-  height:auto;
-  margin-bottom:20px;
+  padding:80px 20px 60px;
 }
 
 .hero h1{
-  font-size:34px;
+  font-size:38px;
   max-width:800px;
   margin:auto;
 }
@@ -75,23 +101,23 @@ header img.logo{
 .hero p{
   font-size:18px;
   max-width:600px;
-  margin:15px auto;
+  margin:20px auto;
   color:#555;
 }
 
 .tagline{
-  margin-top:15px;
+  margin-top:20px;
   font-weight:600;
   color:#333;
 }
 
 /* CTA */
 .cta{
-  margin-top:20px;
+  margin-top:25px;
 }
 
 .cta a{
-  background:#333;
+  background:#555;
   color:white;
   padding:12px 25px;
   border-radius:30px;
@@ -100,12 +126,12 @@ header img.logo{
 }
 
 .cta a:hover{
-  background:#555;
+  background:#333;
 }
 
 /* SECTIONS */
 .section{
-  padding:50px 20px;
+  padding:60px 20px;
   text-align:center;
   max-width:1000px;
   margin:auto;
@@ -115,26 +141,25 @@ header img.logo{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:20px;
 }
 
 .card{
   background:white;
   padding:25px;
+  margin:15px;
   border-radius:15px;
   width:280px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
   transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
 }
 
 .card img{
   max-width:100%;
-  height:auto;
   margin-bottom:15px;
+}
+
+.card:hover{
+  transform:translateY(-8px);
 }
 
 /* PROCESS */
@@ -144,15 +169,15 @@ header img.logo{
 }
 
 .process li{
-  margin:12px 0;
+  margin:10px 0;
 }
 
 /* BLOCKS */
 .block{
   background:white;
-  padding:35px;
+  padding:40px;
   border-radius:15px;
-  margin:25px auto;
+  margin:20px auto;
   max-width:800px;
 }
 
@@ -162,20 +187,19 @@ header img.logo{
 .contact textarea{
   width:90%;
   max-width:400px;
-  margin:10px 0;
+  margin:10px;
   padding:12px;
   border:1px solid #ccc;
   border-radius:8px;
 }
 
 .contact button{
-  background:#333;
+  background:#555;
   color:white;
   padding:12px 30px;
   border:none;
   border-radius:30px;
   cursor:pointer;
-  margin-top:10px;
 }
 
 /* WHATSAPP */
@@ -189,16 +213,14 @@ header img.logo{
   padding:15px;
   border-radius:50%;
   text-decoration:none;
-  z-index:1000;
 }
 
 /* FOOTER */
 footer{
   text-align:center;
-  padding:25px;
+  padding:30px;
   font-size:14px;
   color:#777;
-  margin-top:40px;
 }
 
 /* ANIMATIONS */
@@ -223,205 +245,204 @@ footer{
   }
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
   <img src="Logo1.png" class="logo" alt="Torrente Trade & Advice">
-  <div class="lang-buttons">
+  <div class="lang">
     <button onclick="setLang('fr')">FR</button>
     <button onclick="setLang('en')">EN</button>
     <button onclick="setLang('es')">ES</button>
   </div>
 </header>
 
-<!-- FRANCÉS -->
-<section class="lang fr">
-  <div class="hero fade">
-    <img src="Fabrica.jpg" alt="Optimisation des processus">
-    <h1>Optimisation des processus et réduction des coûts</h1>
-    <p>Torrente Trade & Advice accompagne les entreprises dans l’amélioration de leurs opérations et identification d’opportunités industrielles.</p>
-    <img src="explica.png" alt="Notre approche" style="max-width:400px;margin-top:20px;">
-    <div class="tagline">Approche terrain • Résultats concrets • Rapidité</div>
+<!-- FR -->
+<section class="lang fr fade">
+  <div class="hero">
+    <h1>Réduisez vos coûts. Accédez aux bonnes opportunités.</h1>
+    <p>Nous identifions où votre entreprise perd de l’argent et vous connectons aux meilleures opportunités industrielles.</p>
+    <div class="tagline">Approche terrain. Résultats mesurables. Zéro complexité inutile.</div>
     <div class="cta">
       <a href="#contact">Discuter d’un projet</a>
     </div>
   </div>
 
-  <div class="section fade">
+  <div class="section">
     <h2>Nos Services</h2>
     <div class="cards">
       <div class="card">
-        <img src="Taller.jpg" alt="Optimisation des processus">
+        <img src="Tableta.png" alt="Tablette graphique">
         <h3>Optimisation des processus</h3>
-        <p>Analyse et amélioration des flux opérationnels pour identifier gains et inefficacités.</p>
+        <p>Identification des inefficacités opérationnelles.</p>
       </div>
       <div class="card">
-        <img src="diagrama .png" alt="Optimisation des coûts">
+        <img src="Juego.jpg" alt="Lead Team Succeed">
         <h3>Optimisation des coûts</h3>
-        <p>Détection des pertes et opportunités d’économie.</p>
+        <p>Révélation des pertes invisibles.</p>
       </div>
       <div class="card">
-        <img src="Juego.jpg" alt="Sourcing circulaire">
+        <img src="Taller.jpg" alt="Atelier industriel">
         <h3>Sourcing circulaire</h3>
-        <p>Accès à des équipements de seconde main adaptés à vos besoins.</p>
+        <p>Accès à des équipements industriels.</p>
       </div>
     </div>
   </div>
 
-  <div class="block fade">
-    <h2>Achat d’équipement</h2>
-    <p>Pour toute entreprise cherchant à acheter un équipement industriel de seconde main, nous analysons, négocions et livrons avec facture.</p>
+  <div class="block">
+    <h2>Notre approche</h2>
+    <img src="diagrama .png" alt="Explication process" style="max-width:100%; margin:20px 0;">
+    <p>Analyse approfondie, recommandations opérationnelles et résultats mesurables.</p>
   </div>
 
-  <div class="block fade">
+  <div class="block">
+    <h2>Achat d’équipement</h2>
+    <p>Nous trouvons, négocions et sécurisons les meilleures opportunités pour votre entreprise.</p>
+  </div>
+
+  <div class="block">
     <h2>Vente de machine</h2>
-    <p>Tout particulier souhaitant proposer un équipement peut nous contacter, et nous le mettons en relation avec des entreprises intéressées.</p>
+    <p>Particuliers: proposez vos machines et nous connectons directement avec des entreprises intéressées.</p>
   </div>
 </section>
 
-<!-- INGLÉS -->
-<section class="lang en">
-  <div class="hero fade">
-    <img src="Fabrica.jpg" alt="Process Optimization">
-    <h1>Process Optimization & Cost Reduction</h1>
-    <p>Torrente Trade & Advice helps companies improve operations and find industrial opportunities.</p>
-    <img src="explica.png" alt="Our approach" style="max-width:400px;margin-top:20px;">
-    <div class="tagline">Hands-on approach • Measurable results • Speed</div>
+<!-- EN -->
+<section class="lang en fade">
+  <div class="hero">
+    <h1>Reduce Costs. Access the Right Opportunities.</h1>
+    <p>We identify where your company loses money and connect you to the best industrial opportunities.</p>
+    <div class="tagline">Hands-on approach. Measurable results. Zero unnecessary complexity.</div>
     <div class="cta">
-      <a href="#contact">Discuss a project</a>
+      <a href="#contact">Discuss a Project</a>
     </div>
   </div>
 
-  <div class="section fade">
+  <div class="section">
     <h2>Services</h2>
     <div class="cards">
       <div class="card">
-        <img src="Taller.jpg" alt="Process Optimization">
+        <img src="Tableta.png" alt="Graphic Tablet">
         <h3>Process Optimization</h3>
-        <p>Analyze and improve workflows to identify gains and inefficiencies.</p>
+        <p>Identify operational inefficiencies.</p>
       </div>
       <div class="card">
-        <img src="diagrama .png" alt="Cost Optimization">
+        <img src="Juego.jpg" alt="Lead Team Succeed">
         <h3>Cost Optimization</h3>
-        <p>Detect losses and cost-saving opportunities.</p>
+        <p>Reveal hidden losses.</p>
       </div>
       <div class="card">
-        <img src="Juego.jpg" alt="Circular Sourcing">
+        <img src="Taller.jpg" alt="Industrial Workshop">
         <h3>Circular Sourcing</h3>
-        <p>Access to second-hand equipment suited to your needs.</p>
+        <p>Access professional equipment opportunities.</p>
       </div>
     </div>
   </div>
 
-  <div class="block fade">
-    <h2>Equipment Purchase</h2>
-    <p>For companies looking to buy second-hand industrial equipment, we analyze, negotiate and deliver with invoice.</p>
+  <div class="block">
+    <h2>Our Approach</h2>
+    <img src="diagrama .png" alt="Process explanation" style="max-width:100%; margin:20px 0;">
+    <p>Deep analysis, operational recommendations, measurable results.</p>
   </div>
 
-  <div class="block fade">
-    <h2>Equipment Sale</h2>
-    <p>Any individual wishing to propose equipment can contact us, and we match it with interested companies.</p>
+  <div class="block">
+    <h2>Equipment Purchase</h2>
+    <p>We find, negotiate, and secure the best opportunities for your company.</p>
+  </div>
+
+  <div class="block">
+    <h2>Machine Sale</h2>
+    <p>Individuals: propose your machines and we connect directly with interested companies.</p>
   </div>
 </section>
 
-<!-- ESPAÑOL -->
-<section class="lang es">
-  <div class="hero fade">
-    <img src="Fabrica.jpg" alt="Optimización de procesos">
-    <h1>Optimización de procesos y reducción de costos</h1>
-    <p>Torrente Trade & Advice ayuda a empresas a mejorar operaciones e identificar oportunidades industriales.</p>
-    <img src="explica.png" alt="Nuestro enfoque" style="max-width:400px;margin-top:20px;">
-    <div class="tagline">Enfoque práctico • Resultados medibles • Rapidez</div>
+<!-- ES -->
+<section class="lang es fade">
+  <div class="hero">
+    <h1>Reduzca costos. Acceda a las oportunidades correctas.</h1>
+    <p>Identificamos dónde su empresa pierde dinero y lo conectamos con las mejores oportunidades industriales.</p>
+    <div class="tagline">Enfoque práctico. Resultados medibles. Cero complejidad innecesaria.</div>
     <div class="cta">
       <a href="#contact">Discutir un proyecto</a>
     </div>
   </div>
 
-  <div class="section fade">
+  <div class="section">
     <h2>Servicios</h2>
     <div class="cards">
       <div class="card">
-        <img src="Taller.jpg" alt="Optimización de procesos">
+        <img src="Tableta.png" alt="Tableta gráfica">
         <h3>Optimización de procesos</h3>
-        <p>Analizar y mejorar flujos operativos para identificar ganancias e ineficiencias.</p>
+        <p>Identificación de ineficiencias operativas.</p>
       </div>
       <div class="card">
-        <img src="diagrama .png" alt="Optimización de costos">
+        <img src="Juego.jpg" alt="Lead Team Succeed">
         <h3>Optimización de costos</h3>
-        <p>Detección de pérdidas y oportunidades de ahorro.</p>
+        <p>Revelación de pérdidas invisibles.</p>
       </div>
       <div class="card">
-        <img src="Juego.jpg" alt="Sourcing circular">
+        <img src="Taller.jpg" alt="Taller industrial">
         <h3>Sourcing circular</h3>
-        <p>Acceso a equipos de segunda mano adaptados a sus necesidades.</p>
+        <p>Acceso a oportunidades de equipamiento profesional.</p>
       </div>
     </div>
   </div>
 
-  <div class="block fade">
-    <h2>Compra de equipo</h2>
-    <p>Para cualquier empresa que busque adquirir equipo industrial de segunda mano, analizamos, negociamos y entregamos con factura.</p>
+  <div class="block">
+    <h2>Nuestro enfoque</h2>
+    <img src="diagrama .png" alt="Explicación proceso" style="max-width:100%; margin:20px 0;">
+    <p>Análisis profundo, recomendaciones operativas y resultados medibles.</p>
   </div>
 
-  <div class="block fade">
+  <div class="block">
+    <h2>Compra de equipo</h2>
+    <p>Encontramos, negociamos y aseguramos las mejores oportunidades para su empresa.</p>
+  </div>
+
+  <div class="block">
     <h2>Venta de máquina</h2>
-    <p>Cualquier particular que desee proponer un equipo puede contactarnos, y lo conectamos con empresas interesadas.</p>
+    <p>Particulares: proponga sus máquinas y las conectamos directamente con empresas interesadas.</p>
   </div>
 </section>
 
 <!-- CONTACT -->
 <div class="section contact fade" id="contact">
-  <h2 id="contact-title">Contacto</h2>
-  <form action="https://formspree.io/f/xaqpledl" method="POST" id="contactForm">
-    <input type="email" name="email" placeholder="Tu email" required>
-    <select name="type">
-      <option value="Consulting">Consulting</option>
-      <option value="Purchase">Achat/Compra</option>
-      <option value="Sale">Vente/Venta</option>
-    </select>
-    <textarea name="message" placeholder="Tu mensaje" required></textarea>
-    <button type="submit" id="contact-btn">Enviar</button>
-  </form>
+<h2>Contact / Contacto / Contact</h2>
+<form action="https://formspree.io/f/xaqpledl" method="POST">
+<input type="email" name="email" placeholder="Votre email / Your email / Su email" required>
+<select name="type">
+<option>Consulting</option>
+<option>Achat / Purchase / Compra</option>
+<option>Vente / Sale / Venta</option>
+</select>
+<textarea name="message" placeholder="Votre message / Your message / Su mensaje"></textarea>
+<button>Envoyer / Send / Enviar</button>
+</form>
 </div>
 
-<!-- WHATSAPP -->
-<a href="#" class="whatsapp" id="whatsapp-btn">
-  <i class="fab fa-whatsapp"></i>
+<a id="whatsapp-link" href="https://wa.me/41787313361?text=Bonjour,%20je%20souhaite%20discuter%20d’une%20opportunité%20(Torrentetrade)" class="whatsapp">
+<i class="fab fa-whatsapp"></i>
 </a>
 
 <footer>
-© 2026 Torrente Trade & Advice • <a href="mailto:info@torrentetrade.ch">info@torrentetrade.ch</a>
+© 2026 Torrente Trade & Advice | info@torrentetrade.ch
 </footer>
 
 <script>
-// Cambiar idioma
+// idioma
 function setLang(lang){
   document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
   document.querySelector('.'+lang).style.display='block';
 
-  const contactTitle = document.getElementById('contact-title');
-  const contactBtn = document.getElementById('contact-btn');
-  const whatsappBtn = document.getElementById('whatsapp-btn');
-
-  if(lang==='fr'){
-    contactTitle.textContent='Contact';
-    contactBtn.textContent='Envoyer';
-    whatsappBtn.href='https://wa.me/41787313361?text=Bonjour,%20je%20souhaite%20discuter%20d’une%20opportunité%20(Torrentetrade)';
-  } else if(lang==='en'){
-    contactTitle.textContent='Contact';
-    contactBtn.textContent='Send';
-    whatsappBtn.href='https://wa.me/41787313361?text=Hello,%20I%20would%20like%20to%20discuss%20an%20opportunity%20(Torrentetrade)';
-  } else if(lang==='es'){
-    contactTitle.textContent='Contacto';
-    contactBtn.textContent='Enviar';
-    whatsappBtn.href='https://wa.me/41787313361?text=Hola,%20quiero%20discutir%20una%20oportunidad%20(Torrentetrade)';
-  }
+  // Cambiar texto WhatsApp según idioma
+  const wa = document.getElementById('whatsapp-link');
+  if(lang==='fr') wa.href='https://wa.me/41787313361?text=Bonjour,%20je%20souhaite%20discuter%20d’une%20opportunité%20(Torrentetrade)';
+  if(lang==='en') wa.href='https://wa.me/41787313361?text=Hello,%20I%20want%20to%20discuss%20an%20opportunity%20(Torrentetrade)';
+  if(lang==='es') wa.href='https://wa.me/41787313361?text=Hola,%20quiero%20discutir%20una%20oportunidad%20(Torrentetrade)';
 }
-setLang('fr'); // idioma por defecto
+setLang('fr');
 
-// Animaciones
+// animaciones
 const faders = document.querySelectorAll('.fade');
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
