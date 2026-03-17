@@ -3,18 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Torrente Trade & Advice | Conseil opérationnel & opportunités industrielles</title>
-
 <meta name="description" content="Réduisez vos coûts et accédez aux meilleures opportunités industrielles. Conseil opérationnel et sourcing d’équipements professionnels.">
 <meta name="keywords" content="optimisation coûts, lean management suisse, machines occasion, sourcing industriel, conseil opérationnel">
 <meta name="author" content="Torrente Trade & Advice">
-
 <meta property="og:title" content="Torrente Trade & Advice">
 <meta property="og:description" content="Conseil opérationnel & opportunités industrielles">
 <meta property="og:image" content="Logo1.png">
 <meta property="og:type" content="website">
-
 <link rel="icon" href="Logo1.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,11 +36,11 @@ header img.logo{
   height:auto;
 }
 
-.lang{
+.lang-buttons{
   margin-top:10px;
 }
 
-.lang button{
+.lang-buttons button{
   border:none;
   background:#e0e0e0;
   padding:6px 14px;
@@ -54,7 +50,7 @@ header img.logo{
   font-size:13px;
 }
 
-.lang button:hover{
+.lang-buttons button:hover{
   background:#cfcfcf;
 }
 
@@ -193,6 +189,7 @@ header img.logo{
   padding:15px;
   border-radius:50%;
   text-decoration:none;
+  z-index:1000;
 }
 
 /* FOOTER */
@@ -226,13 +223,13 @@ footer{
   }
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
   <img src="Logo1.png" class="logo" alt="Torrente Trade & Advice">
-  <div class="lang">
+  <div class="lang-buttons">
     <button onclick="setLang('fr')">FR</button>
     <button onclick="setLang('en')">EN</button>
     <button onclick="setLang('es')">ES</button>
@@ -399,12 +396,11 @@ footer{
 </footer>
 
 <script>
-/* Idioma */
+// Cambiar idioma
 function setLang(lang){
   document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
   document.querySelector('.'+lang).style.display='block';
 
-  // Actualizar contacto
   const contactTitle = document.getElementById('contact-title');
   const contactBtn = document.getElementById('contact-btn');
   const whatsappBtn = document.getElementById('whatsapp-btn');
@@ -425,7 +421,7 @@ function setLang(lang){
 }
 setLang('fr'); // idioma por defecto
 
-/* Animaciones */
+// Animaciones
 const faders = document.querySelectorAll('.fade');
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
