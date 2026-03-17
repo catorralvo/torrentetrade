@@ -18,6 +18,8 @@ background:#f5f7fa;
 color:#1d2a35;
 }
 
+/* HEADER */
+
 header{
 background:white;
 padding:20px 40px;
@@ -31,6 +33,12 @@ box-shadow:0 2px 10px rgba(0,0,0,0.05);
 font-weight:700;
 font-size:20px;
 color:#0a2540;
+text-decoration:none;
+}
+
+nav{
+display:flex;
+align-items:center;
 }
 
 nav a{
@@ -39,6 +47,27 @@ text-decoration:none;
 color:#0a2540;
 font-weight:500;
 }
+
+/* LANGUAGE */
+
+.lang{
+margin-left:30px;
+}
+
+.lang button{
+margin-left:5px;
+padding:6px 10px;
+border:none;
+cursor:pointer;
+background:#eaeaea;
+border-radius:4px;
+}
+
+.lang button:hover{
+background:#d0d0d0;
+}
+
+/* HERO */
 
 .hero{
 padding:100px 20px;
@@ -72,6 +101,8 @@ font-weight:600;
 cursor:pointer;
 }
 
+/* SECTIONS */
+
 .section{
 padding:80px 20px;
 max-width:1200px;
@@ -83,6 +114,8 @@ text-align:center;
 margin-bottom:40px;
 font-size:32px;
 }
+
+/* CARDS */
 
 .services{
 display:flex;
@@ -104,9 +137,7 @@ transition:0.3s;
 transform:translateY(-8px);
 }
 
-.card h3{
-margin-top:10px;
-}
+/* PROCESS */
 
 .process{
 display:flex;
@@ -116,9 +147,7 @@ gap:40px;
 text-align:center;
 }
 
-.step{
-max-width:250px;
-}
+/* CONTACT */
 
 .contact{
 background:#0a2540;
@@ -142,11 +171,25 @@ border-radius:6px;
 border:none;
 }
 
+/* BOTÓN GRANDE */
+
 button.submit{
 background:white;
 color:#0a2540;
 font-weight:600;
+padding:16px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+transition:0.2s;
 }
+
+button.submit:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -163,136 +206,129 @@ color:white;
 
 <header>
 
-<div class="logo">Torrente Trade & Advice</div>
+<a href="#" class="logo">Torrente Trade & Advice</a>
 
 <nav>
-<a href="#services">Services</a>
-<a href="#process">Processus</a>
-<a href="#contact">Contact</a>
+<a href="#services" data-fr="Services" data-en="Services" data-es="Servicios">Services</a>
+<a href="#process" data-fr="Processus" data-en="Process" data-es="Proceso">Processus</a>
+<a href="#contact" data-fr="Contact" data-en="Contact" data-es="Contacto">Contact</a>
+
+<div class="lang">
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+</div>
+
 </nav>
 
 </header>
 
 <section class="hero">
 
-<h1>Optimisation des processus et réduction des coûts pour les PME</h1>
+<h1 data-fr="Optimisation des processus et réduction des coûts"
+    data-en="Process optimization and cost reduction"
+    data-es="Optimización de procesos y reducción de costos">
 
-<p>
-Nous aidons les entreprises à améliorer leurs opérations,
-réduire leurs coûts et identifier des opportunités d’équipements
-professionnels sur le marché secondaire.
+Optimisation des processus et réduction des coûts
+</h1>
+
+<p data-fr="Nous aidons les entreprises à améliorer leurs opérations et réduire leurs coûts."
+   data-en="We help companies improve operations and reduce costs."
+   data-es="Ayudamos a las empresas a mejorar sus operaciones y reducir costos.">
+
+Nous aidons les entreprises à améliorer leurs opérations et réduire leurs coûts.
 </p>
 
-<button onclick="location.href='#contact'">
+<button onclick="location.href='#contact'"
+data-fr="Nous contacter"
+data-en="Contact us"
+data-es="Contáctanos">
+
 Nous contacter
+
 </button>
 
 </section>
 
-
 <section id="services" class="section">
 
-<h2>Nos services</h2>
+<h2 data-fr="Nos services" data-en="Our services" data-es="Nuestros servicios">Nos services</h2>
 
 <div class="services">
 
 <div class="card">
-<h3>Optimisation des processus</h3>
-<p>
-Analyse des flux opérationnels afin d’identifier
-des gains d’efficacité et améliorer la performance.
-</p>
+<h3 data-fr="Optimisation des processus" data-en="Process optimization" data-es="Optimización de procesos"></h3>
+<p data-fr="Amélioration des flux et performance." data-en="Improve workflows and performance." data-es="Mejora de procesos y rendimiento."></p>
 </div>
 
 <div class="card">
-<h3>Optimisation des coûts</h3>
-<p>
-Identification d’opportunités d’économie dans les
-opérations, les achats et l’organisation.
-</p>
+<h3 data-fr="Optimisation des coûts" data-en="Cost optimization" data-es="Optimización de costos"></h3>
+<p data-fr="Réduction des dépenses et efficacité." data-en="Reduce costs and increase efficiency." data-es="Reducción de costos y eficiencia."></p>
 </div>
 
 <div class="card">
-<h3>Sourcing circulaire</h3>
-<p>
-Recherche d’équipements professionnels sur le
-marché secondaire avec analyse et négociation.
-</p>
+<h3 data-fr="Sourcing circulaire" data-en="Circular sourcing" data-es="Sourcing circular"></h3>
+<p data-fr="Accès au marché secondaire." data-en="Access secondary equipment market." data-es="Acceso a equipos de segunda mano."></p>
 </div>
 
 </div>
 
 </section>
-
 
 <section id="process" class="section">
 
-<h2>Comment ça fonctionne</h2>
+<h2 data-fr="Comment ça fonctionne" data-en="How it works" data-es="Cómo funciona">Comment ça fonctionne</h2>
 
 <div class="process">
 
-<div class="step">
-<h3>1</h3>
-<p>Vous nous envoyez l'information ou l'opportunité.</p>
-</div>
-
-<div class="step">
-<h3>2</h3>
-<p>Nous analysons l'opportunité et négocions l'achat.</p>
-</div>
-
-<div class="step">
-<h3>3</h3>
-<p>L'équipement est acheté et revendu avec facture.</p>
-</div>
+<div>1. Analyse</div>
+<div>2. Négociation</div>
+<div>3. Achat sécurisé</div>
 
 </div>
 
 </section>
-
-
-<section class="section">
-
-<h2>Vous avez du matériel à vendre ?</h2>
-
-<p style="text-align:center;max-width:700px;margin:auto;">
-Entreprises ou particuliers peuvent proposer du matériel
-professionnel disponible. Nous analysons les opportunités
-et identifions des entreprises susceptibles d’être intéressées.
-</p>
-
-</section>
-
 
 <section id="contact" class="contact">
 
-<h2>Contact</h2>
+<h2 data-fr="Contact" data-en="Contact" data-es="Contacto">Contact</h2>
 
-<p>Envoyez-nous votre demande et nous vous recontacterons.</p>
-
-<form action="mailto:info@torrentetrade.ch" method="post">
+<form>
 
 <input type="text" placeholder="Nom">
-
 <input type="email" placeholder="Email">
-
 <textarea rows="5" placeholder="Message"></textarea>
 
-<button class="submit">Envoyer</button>
+<button class="submit"
+data-fr="Envoyer votre demande"
+data-en="Send your request"
+data-es="Enviar solicitud">
+
+Envoyer votre demande
+
+</button>
 
 </form>
 
 </section>
 
-
 <footer>
 
 Torrente Trade & Advice<br>
-Chemin des Uttins 21<br>
-1183 Bursins – Suisse<br>
+Chemin des Uttins 21 – Suisse<br>
 info@torrentetrade.ch
 
 </footer>
+
+<script>
+
+function setLang(lang){
+document.querySelectorAll("[data-fr]").forEach(el=>{
+el.innerText = el.getAttribute("data-" + lang);
+});
+}
+
+</script>
 
 </body>
 </html>
