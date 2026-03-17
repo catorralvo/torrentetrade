@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Torrente Trade & Advice</title>
 <link rel="stylesheet" href="style.css">
-<!-- Font Awesome para WhatsApp icon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <header>
-    <div class="logo">
-        <a href="#"><img src="Logo1.png" alt="Torrente Trade & Advice"></a>
+    <div class="header-logo">
+        <img src="Logo1.png" alt="Torrente Trade & Advice">
     </div>
-    <div class="lang-buttons">
+    <div class="header-lang">
         <button onclick="setLanguage('fr')">FR</button>
         <button onclick="setLanguage('en')">EN</button>
         <button onclick="setLanguage('es')">ES</button>
@@ -194,36 +193,4 @@
                     <option value="">Seleccione el asunto</option>
                     <option value="Consulting">Consultoría / Lean Management</option>
                     <option value="Compra">Compra de equipo</option>
-                    <option value="Venta">Propuesta de venta</option>
-                    <option value="Otro">Otro</option>
-                </select>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
-</main>
-
-<!-- WhatsApp flotante -->
-<a href="https://wa.me/41781234567?text=Bonjour,%20je%20souhaite%20vous%20contacter%20via%20Torrentetrade" class="whatsapp" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<footer>
-    <div class="footer-content">
-        <img src="Logo1.png" alt="Torrente Trade & Advice">
-        <p>© 2026 Torrente Trade & Advice - Tous droits réservés</p>
-        <p>Email: <a href="mailto:info@torrentetrade.ch">info@torrentetrade.ch</a></p>
-    </div>
-</footer>
-
-<script>
-function setLanguage(lang) {
-    const sections = document.querySelectorAll('.lang');
-    sections.forEach(sec => sec.style.display = 'none');
-    document.querySelector('.' + lang).style.display = 'block';
-}
-setLanguage('fr'); // Francés por defecto
-</script>
-
-</body>
-</html>
+                    <option value="Venta">Propuesta de venta</option
