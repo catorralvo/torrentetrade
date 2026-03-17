@@ -1,22 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Torrente Trade & Advice | Optimisation & Sourcing Circulaire</title>
+
+<meta name="description" content="Optimisation des processus, réduction des coûts et sourcing d’équipements professionnels de seconde main pour entreprises.">
+<meta name="keywords" content="lean management, optimisation processus, machines occasion, equipment sourcing, conseil entreprise suisse">
+<meta name="author" content="Torrente Trade & Advice">
+
+<meta property="og:title" content="Torrente Trade & Advice">
+<meta property="og:description" content="Optimisation et sourcing d’équipements professionnels">
+<meta property="og:image" content="Logo1.png">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="Logo1.png">
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
 <header class="sticky-header">
-    <div class="header-logo animate">
-        <img src="Logo1.png" alt="Torrente Trade & Advice">
-    </div>
-    <div class="header-lang animate">
-        <button onclick="setLanguage('fr')">FR</button>
-        <button onclick="setLanguage('en')">EN</button>
-        <button onclick="setLanguage('es')">ES</button>
+    <img src="Logo1.png" class="logo">
+
+    <div class="lang-buttons">
+        <button onclick="setLang('fr')">FR</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('es')">ES</button>
     </div>
 </header>
 
-<main>
-<!-- Agregamos clase 'fade-in' a secciones importantes -->
-<section class="lang fr fade-in">
-    ...
+<!-- ================= FR ================= -->
+<section class="lang fr">
+
+<div class="hero fade">
+<img src="Fabrica.jpg">
+<h1>Optimisation des processus & réduction des coûts</h1>
+<p>Nous accompagnons les entreprises avec une approche opérationnelle concrète et orientée résultats.</p>
+</div>
+
+<div class="services fade">
+<h2>Nos services</h2>
+
+<div class="card">
+<img src="Tableta.png">
+<h3>Optimisation des processus</h3>
+<p>Amélioration des flux et performance opérationnelle.</p>
+</div>
+
+<div class="card">
+<img src="Juego.jpg">
+<h3>Optimisation des coûts</h3>
+<p>Identification des leviers d’économie concrets.</p>
+</div>
+
+<div class="card">
+<img src="Taller.jpg">
+<h3>Sourcing circulaire</h3>
+<p>Accès à des équipements professionnels via le marché secondaire.</p>
+</div>
+
+</div>
+
+<div class="approach fade">
+<h2>Notre approche</h2>
+<img src="explica.png">
+<p>Analyse terrain, compréhension des besoins et mise en œuvre rapide de solutions concrètes.</p>
+</div>
+
+<div class="process fade">
+<h2>Comment ça fonctionne</h2>
+<ul>
+<li>Analyse des besoins</li>
+<li>Identification des opportunités</li>
+<li>Mise en relation & exécution</li>
+<li>Suivi et optimisation</li>
+</ul>
+</div>
+
+<div class="buy fade">
+<h2>Achat d’équipement</h2>
+<p>Nous accompagnons les entreprises dans l’achat d’équipements d’occasion avec facture, sécurisation et négociation.</p>
+</div>
+
+<div class="sell fade">
+<h2>Proposer une machine</h2>
+<p>Vous avez une machine à vendre ? Nous la proposons directement à notre réseau d’entreprises.</p>
+</div>
+
 </section>
-<section class="lang en fade-in">
-    ...
-</section>
-<section class="lang es fade-in">
-    ...
-</section>
+
+<!-- ================= CONTACT ================= -->
+
+<div class="contact fade">
+<h2>Contact</h2>
+
+<form action="https://formspree.io/f/xaqpledl" method="POST">
+<input type="email" name="email" placeholder="Votre email" required>
+
+<select name="type" required>
+<option value="">Choisir</option>
+<option>Consulting</option>
+<option>Achat machine</option>
+<option>Vente machine</option>
+<option>Autre</option>
+</select>
+
+<textarea name="message" placeholder="Votre message"></textarea>
+
+<button type="submit">Envoyer</button>
+</form>
+
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/41787313361?text=Bonjour,%20je%20viens%20du%20site%20Torrentetrade" 
+class="whatsapp" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+<p>© 2026 Torrente Trade & Advice</p>
+<p>info@torrentetrade.ch</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
