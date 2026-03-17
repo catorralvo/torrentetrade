@@ -1,204 +1,358 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torrente Trade & Advice</title>
-    <meta name="description" content="Torrente Trade & Advice: Optimisation des processus, lean management et sourcing circulaire pour entreprises. Achat et vente d'équipements professionnels de seconde main.">
-    <meta name="keywords" content="Torrente Trade & Advice, optimisation des processus, lean management, sourcing circulaire, achat matériel professionnel, vente matériel professionnel">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Torrente Trade & Advice | Conseil opérationnel & opportunités industrielles</title>
+
+<meta name="description" content="Réduisez vos coûts et accédez aux meilleures opportunités industrielles. Conseil opérationnel et sourcing d’équipements professionnels.">
+<meta name="keywords" content="optimisation coûts, lean management suisse, machines occasion, sourcing industriel, conseil opérationnel">
+<meta name="author" content="Torrente Trade & Advice">
+
+<meta property="og:title" content="Torrente Trade & Advice">
+<meta property="og:description" content="Conseil opérationnel & opportunités industrielles">
+<meta property="og:image" content="Logo1.png">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="Logo1.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+body{
+margin:0;
+font-family:'Inter', sans-serif;
+background:#f4f6f9;
+color:#1a1a1a;
+line-height:1.6;
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+background:white;
+text-align:center;
+padding:15px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+z-index:1000;
+}
+
+.logo{
+height:100px;
+}
+
+.lang{
+margin-top:10px;
+}
+
+.lang button{
+border:none;
+background:#eee;
+padding:6px 12px;
+margin:3px;
+cursor:pointer;
+border-radius:20px;
+font-size:12px;
+}
+
+.lang button:hover{
+background:#ddd;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px 60px;
+}
+
+.hero h1{
+font-size:38px;
+max-width:800px;
+margin:auto;
+}
+
+.hero p{
+font-size:18px;
+max-width:600px;
+margin:20px auto;
+color:#555;
+}
+
+.tagline{
+margin-top:20px;
+font-weight:600;
+color:#003366;
+}
+
+/* CTA */
+.cta{
+margin-top:25px;
+}
+
+.cta a{
+background:#003366;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.cta a:hover{
+background:#0055a5;
+}
+
+/* SECTIONS */
+.section{
+padding:60px 20px;
+text-align:center;
+max-width:1000px;
+margin:auto;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.card{
+background:white;
+padding:25px;
+margin:15px;
+border-radius:15px;
+width:280px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* PROCESS */
+.process ul{
+list-style:none;
+padding:0;
+}
+
+.process li{
+margin:10px 0;
+}
+
+/* BLOCKS */
+.block{
+background:white;
+padding:40px;
+border-radius:15px;
+margin:20px auto;
+max-width:800px;
+}
+
+/* CONTACT */
+.contact input,
+.contact select,
+.contact textarea{
+width:90%;
+max-width:400px;
+margin:10px;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+/* BUTTON */
+.contact button{
+background:#003366;
+color:white;
+padding:12px 30px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:28px;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+color:#777;
+}
+
+/* ANIMATIONS */
+.fade{
+opacity:0;
+transform:translateY(20px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:28px;
+}
+.cards{
+flex-direction:column;
+align-items:center;
+}
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
+
 <body>
 
 <header>
-    <div class="logo">
-        <img src="Logo1.png" alt="Torrente Trade & Advice">
-    </div>
-    <div class="lang-buttons">
-        <button onclick="setLanguage('fr')">FR</button>
-        <button onclick="setLanguage('en')">EN</button>
-        <button onclick="setLanguage('es')">ES</button>
-    </div>
+<img src="Logo1.png" class="logo">
+
+<div class="lang">
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+</div>
 </header>
 
-<main>
-    <!-- FRANCÉS -->
-    <section class="lang fr">
-        <div class="hero">
-            <img src="Taller.jpg" alt="Bureau de conseil">
-            <h1>Optimisation des processus et réduction des coûts pour les entreprises</h1>
-            <p>Torrente Trade & Advice accompagne les entreprises dans l’amélioration de leurs opérations et l’identification d’opportunités d’économie grâce à une approche opérationnelle et au sourcing circulaire.</p>
-        </div>
+<!-- FR -->
+<section class="lang fr">
 
-        <div class="services">
-            <h2>Nos Services</h2>
-            <div class="service-item">
-                <img src="Tableta.png" alt="">
-                <h3>Optimisation des processus</h3>
-                <p>Analyse et amélioration des flux opérationnels afin d’identifier des gains d’efficacité et réduire les coûts.</p>
-            </div>
-            <div class="service-item">
-                <img src="explica.png" alt="">
-                <h3>Notre approche</h3>
-                <p>Mise en place de méthodes lean management et optimisation des processus pour PME sans création de poste supplémentaire.</p>
-            </div>
-            <div class="service-item">
-                <img src="Juego.jpg" alt="">
-                <h3>Optimisation des coûts</h3>
-                <p>Identification d’opportunités d’économie dans les opérations et les achats.</p>
-            </div>
-        </div>
+<div class="hero fade">
+<h1>Réduisez vos coûts. Accédez aux bonnes opportunités.</h1>
 
-        <div class="opportunity">
-            <h2>Achat d’équipements de seconde main</h2>
-            <p>Pour toute entreprise souhaitant acquérir du matériel professionnel de seconde main, nous analysons l’opportunité, négocions et fournissons l’équipement avec facture.</p>
-        </div>
+<p>Nous identifions où votre entreprise perd de l’argent et vous connectons aux meilleures opportunités industrielles.</p>
 
-        <div class="sell">
-            <h2>Proposer du matériel à vendre</h2>
-            <p>Si vous êtes un particulier ou une entreprise souhaitant vendre du matériel, nous analysons votre équipement et le proposons à des entreprises à la recherche de solutions.</p>
-        </div>
+<div class="tagline">Approche terrain. Résultats mesurables. Zéro complexité inutile.</div>
 
-        <div class="contact">
-            <h2>Contact</h2>
-            <form id="contactForm" action="https://formspree.io/f/xaqpledl" method="POST">
-                <input type="hidden" name="_subject" value="Message depuis torrentetrade">
-                <input type="text" name="name" placeholder="Votre nom" required>
-                <input type="email" name="_replyto" placeholder="Votre email" required>
-                <select name="service">
-                    <option value="">Sélectionner le service</option>
-                    <option value="consulting">Service de consulting</option>
-                    <option value="buy">Acheter du matériel</option>
-                    <option value="sell">Proposer du matériel</option>
-                    <option value="other">Autre</option>
-                </select>
-                <textarea name="message" placeholder="Votre message" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
-        </div>
-    </section>
+<div class="cta">
+<a href="#contact">Discuter d’un projet</a>
+</div>
+</div>
 
-    <!-- ANGLAIS -->
-    <section class="lang en">
-        <div class="hero">
-            <img src="Taller.jpg" alt="Consulting Office">
-            <h1>Process Optimization & Cost Reduction for Businesses</h1>
-            <p>Torrente Trade & Advice helps companies improve operations and identify savings opportunities through operational approach and circular sourcing.</p>
-        </div>
+<div class="section fade">
+<h2>Services</h2>
 
-        <div class="services">
-            <h2>Services</h2>
-            <div class="service-item">
-                <img src="Tableta.png" alt="">
-                <h3>Process Optimization</h3>
-                <p>Analyze and improve operational workflows to increase efficiency and reduce operational costs.</p>
-            </div>
-            <div class="service-item">
-                <img src="explica.png" alt="">
-                <h3>Our Approach</h3>
-                <p>Implementation of lean management and process optimization methods for SMEs without creating new positions.</p>
-            </div>
-            <div class="service-item">
-                <img src="Juego.jpg" alt="">
-                <h3>Cost Optimization</h3>
-                <p>Identify cost saving opportunities in operations and procurement.</p>
-            </div>
-        </div>
+<div class="cards">
 
-        <div class="opportunity">
-            <h2>Buying Second-Hand Equipment</h2>
-            <p>Companies can purchase professional second-hand equipment with full invoice and legal security. We analyze, negotiate, and provide the equipment.</p>
-        </div>
+<div class="card">
+<h3>Optimisation des processus</h3>
+<p>Identification des inefficacités opérationnelles.</p>
+<strong>-20% de gains possibles</strong>
+</div>
 
-        <div class="sell">
-            <h2>Propose Equipment for Sale</h2>
-            <p>Individuals or companies can propose equipment for sale. We analyze it and offer it to companies looking for solutions.</p>
-        </div>
+<div class="card">
+<h3>Optimisation des coûts</h3>
+<p>Révélation des pertes invisibles.</p>
+<strong>Vision claire immédiate</strong>
+</div>
 
-        <div class="contact">
-            <h2>Contact</h2>
-            <form id="contactFormEn" action="https://formspree.io/f/xaqpledl" method="POST">
-                <input type="hidden" name="_subject" value="Message from torrentetrade">
-                <input type="text" name="name" placeholder="Your name" required>
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <select name="service">
-                    <option value="">Select Service</option>
-                    <option value="consulting">Consulting Service</option>
-                    <option value="buy">Buy Equipment</option>
-                    <option value="sell">Propose Equipment</option>
-                    <option value="other">Other</option>
-                </select>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
+<div class="card">
+<h3>Sourcing circulaire</h3>
+<p>Accès à des équipements industriels.</p>
+<strong>Jusqu’à -50% du marché</strong>
+</div>
 
-    <!-- ESPAÑOL -->
-    <section class="lang es">
-        <div class="hero">
-            <img src="Taller.jpg" alt="Oficina de consultoría">
-            <h1>Optimización de procesos y reducción de costos para empresas</h1>
-            <p>Torrente Trade & Advice ayuda a las empresas a mejorar operaciones e identificar oportunidades de ahorro mediante un enfoque operativo y sourcing circular.</p>
-        </div>
+</div>
+</div>
 
-        <div class="services">
-            <h2>Servicios</h2>
-            <div class="service-item">
-                <img src="Tableta.png" alt="">
-                <h3>Optimización de procesos</h3>
-                <p>Analizar y mejorar los flujos operativos para aumentar eficiencia y reducir costos.</p>
-            </div>
-            <div class="service-item">
-                <img src="explica.png" alt="">
-                <h3>Nuestro enfoque</h3>
-                <p>Implementación de métodos de lean management y optimización de procesos para PYMEs sin necesidad de crear nuevos puestos.</p>
-            </div>
-            <div class="service-item">
-                <img src="Juego.jpg" alt="">
-                <h3>Optimización de costos</h3>
-                <p>Identificar oportunidades de ahorro en operaciones y compras.</p>
-            </div>
-        </div>
+<div class="section process fade">
+<h2>Comment ça fonctionne</h2>
+<ul>
+<li>Analyse rapide</li>
+<li>Identification des gains</li>
+<li>Mise en œuvre</li>
+<li>Résultats mesurables</li>
+</ul>
+</div>
 
-        <div class="opportunity">
-            <h2>Compra de equipos de segunda mano</h2>
-            <p>Cualquier empresa puede adquirir equipos profesionales de segunda mano con factura y seguridad legal. Analizamos, negociamos y proporcionamos el equipo.</p>
-        </div>
+<div class="block fade">
+<h2>Achat d’équipement</h2>
+<p>Nous trouvons, négocions et sécurisons les meilleures opportunités pour votre entreprise.</p>
+</div>
 
-        <div class="sell">
-            <h2>Proponer equipo a la venta</h2>
-            <p>Si eres particular o empresa, puedes proponernos un equipo. Lo analizamos y lo ofrecemos a empresas que lo necesiten.</p>
-        </div>
+<div class="block fade">
+<h2>Vente de machine</h2>
+<p>Nous connectons directement votre équipement avec des acheteurs qualifiés.</p>
+</div>
 
-        <div class="contact">
-            <h2>Contacto</h2>
-            <form id="contactFormEs" action="https://formspree.io/f/xaqpledl" method="POST">
-                <input type="hidden" name="_subject" value="Mensaje desde torrentetrade">
-                <input type="text" name="name" placeholder="Su nombre" required>
-                <input type="email" name="_replyto" placeholder="Su email" required>
-                <select name="service">
-                    <option value="">Seleccione servicio</option>
-                    <option value="consulting">Servicio de consulting</option>
-                    <option value="buy">Comprar equipo</option>
-                    <option value="sell">Proponer equipo</option>
-                    <option value="other">Otro</option>
-                </select>
-                <textarea name="message" placeholder="Su mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
-</main>
+<div class="section fade">
+<h2>Pourquoi nous faire confiance</h2>
+<p>Approche terrain • Réseau actif • Résultats concrets • Rapidité d’exécution</p>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<div class="section contact fade" id="contact">
+<h2>Contact</h2>
+
+<form action="https://formspree.io/f/xaqpledl" method="POST">
+<input type="email" name="email" placeholder="Votre email" required>
+
+<select name="type">
+<option>Consulting</option>
+<option>Achat</option>
+<option>Vente</option>
+</select>
+
+<textarea name="message" placeholder="Votre message"></textarea>
+
+<button>Envoyer</button>
+</form>
+</div>
+
+<a href="https://wa.me/41787313361?text=Bonjour,%20je%20souhaite%20discuter%20d’une%20opportunité%20(Torrentetrade)" class="whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 <footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Torrente Trade & Advice. Tous droits réservés.</p>
-        <p>Email: <a href="mailto:info@torrentetrade.ch">info@torrentetrade.ch</a></p>
-        <a class="whatsapp-button" href="https://wa.me/41787313361?text=Message%20from%20TorrenteTrade" target="_blank">WhatsApp</a>
-    </div>
+© 2026 Torrente Trade & Advice
 </footer>
 
-<script src="script.js"></script>
+<script>
+
+// idioma
+function setLang(lang){
+document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
+document.querySelector('.'+lang).style.display='block';
+}
+setLang('fr');
+
+// animaciones
+const faders = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+faders.forEach(el=>observer.observe(el));
+
+</script>
+
 </body>
 </html>
