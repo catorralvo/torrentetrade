@@ -10,7 +10,7 @@
 
 <header>
     <div class="logo">
-        <a href="#"><img src="logo1.jpg" alt="Torrente Trade & Advice"></a>
+        <a href="#"><img src="logo1.png" alt="Torrente Trade & Advice"></a>
     </div>
     <div class="lang-buttons">
         <button onclick="setLanguage('fr')">FR</button>
@@ -20,7 +20,7 @@
 </header>
 
 <main>
-    <!-- Secciones en Francés -->
+    <!-- Francés -->
     <section class="lang fr">
         <div class="hero">
             <img src="taller.png" alt="Bureau de conseil">
@@ -35,12 +35,12 @@
                 <p>Analyse et amélioration des flux opérationnels afin d’identifier des gains d’efficacité et réduire les coûts.</p>
             </div>
             <div class="service-item">
-                <img src="management.png" alt="">
+                <img src="management.jpg" alt="">
                 <h3>Optimisation des coûts</h3>
                 <p>Identification d’opportunités d’économie dans les opérations et les achats.</p>
             </div>
             <div class="service-item">
-                <img src="fabrica.png" alt="">
+                <img src="fabrica.jpg" alt="">
                 <h3>Sourcing circulaire</h3>
                 <p>Identification d’opportunités d’équipements professionnels sur le marché secondaire.</p>
             </div>
@@ -63,7 +63,7 @@
         </div>
     </section>
 
-    <!-- Secciones en Inglés -->
+    <!-- Inglés -->
     <section class="lang en">
         <div class="hero">
             <img src="taller.png" alt="Consulting Office">
@@ -78,12 +78,12 @@
                 <p>Analyze and improve operational workflows to increase efficiency and reduce operational costs.</p>
             </div>
             <div class="service-item">
-                <img src="management.png" alt="">
+                <img src="management.jpg" alt="">
                 <h3>Cost Optimization</h3>
                 <p>Identify cost saving opportunities in operations and procurement.</p>
             </div>
             <div class="service-item">
-                <img src="fabrica.png" alt="">
+                <img src="fabrica.jpg" alt="">
                 <h3>Circular Sourcing</h3>
                 <p>Identify professional equipment opportunities on the secondary market.</p>
             </div>
@@ -106,7 +106,7 @@
         </div>
     </section>
 
-    <!-- Secciones en Español -->
+    <!-- Español -->
     <section class="lang es">
         <div class="hero">
             <img src="taller.png" alt="Oficina de consultoría">
@@ -121,12 +121,12 @@
                 <p>Analizar y mejorar los flujos operativos para aumentar eficiencia y reducir costos.</p>
             </div>
             <div class="service-item">
-                <img src="management.png" alt="">
+                <img src="management.jpg" alt="">
                 <h3>Optimización de costos</h3>
                 <p>Identificar oportunidades de ahorro en operaciones y compras.</p>
             </div>
             <div class="service-item">
-                <img src="fabrica.png" alt="">
+                <img src="fabrica.jpg" alt="">
                 <h3>Sourcing circular</h3>
                 <p>Identificar oportunidades de equipamiento profesional en el mercado secundario.</p>
             </div>
@@ -148,7 +148,6 @@
             </form>
         </div>
     </section>
-
 </main>
 
 <script>
@@ -157,9 +156,7 @@ function setLanguage(lang) {
     sections.forEach(sec => sec.style.display = 'none');
     document.querySelector('.' + lang).style.display = 'block';
 }
-
-// Mostrar francés al cargar
-setLanguage('fr');
+setLanguage('fr'); // Francés por defecto
 </script>
 
 </body>
