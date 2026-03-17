@@ -1,21 +1,17 @@
-// LANGUAGES
-function setLang(lang){
-document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
-document.querySelector('.'+lang).style.display='block';
+// Cambio de idioma
+function setLanguage(lang) {
+    const sections = document.querySelectorAll('.lang');
+    sections.forEach(sec => sec.style.display = 'none');
+    document.querySelector('.' + lang).style.display = 'block';
 }
 
-// DEFAULT LANG
-setLang('fr');
+setLanguage('fr'); // Francés por defecto
 
-// SCROLL ANIMATION
-const faders = document.querySelectorAll('.fade');
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
+// Formulario para enviar correctamente
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e){
+        // Formspree envia el formulario
+        // Se puede agregar alerta
+        alert("Merci, votre message a été envoyé !");
+    });
 });
-});
-
-faders.forEach(el=>observer.observe(el));
