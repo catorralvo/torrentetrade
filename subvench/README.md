@@ -8,23 +8,25 @@ Objectif: aider les PME suisses à identifier, sauvegarder et surveiller les aid
 
 SubvenCH n'est pas un annuaire. Le flux cible est:
 
-profil entreprise → projet → filtrage par règles → opportunités pertinentes → explication → sources officielles → historique → GrantWatch → préparation du dossier.
+profil entreprise → projet → filtrage par règles → opportunités pertinentes → explication → disponibilité → sources officielles → historique → GrantWatch → préparation du dossier.
 
-## M2 actuel
+## M2.1 actuel
 
 - Web uniquement, sans installation.
 - Périmètre: Vaud, Genève et principaux programmes fédéraux/internationaux accessibles aux PME suisses.
-- Catalogue versionné et sourcé.
+- **25 dispositifs structurés et sourcés**, versionnés dans le catalogue.
 - Moteur de règles déterministe (`engine.mjs`).
 - Matching explicable avec `confirmed`, `probable`, `to_verify`, `not_eligible`.
+- Disponibilité séparée de l'éligibilité: `open`, `upcoming`, `call_based`, `closed`, `check`.
 - Profil entreprise persistant dans le navigateur.
-- Plusieurs projets sauvegardés.
-- Historique de scans.
+- Plusieurs projets sauvegardés et historique de scans immuable.
 - GrantWatch local: comparaison automatique d'un ancien scan avec un nouveau catalogue.
-- Alertes en cas de nouvelle piste ou changement d'éligibilité/pertinence.
+- Alertes en cas de nouvelle piste, changement d'éligibilité, de pertinence ou de disponibilité.
 - Export JSON des données utilisateur.
 - Tests de régression + audit structurel du catalogue.
 - Monitoring hebdomadaire de la santé des sources officielles via GitHub Actions.
+- 12 cas pilotes suisses reproductibles (`data/pilot_cases.json`).
+- Protocole de validation terrain pour GENIE.ch, platinn, COMETE et autres partenaires (`PARTNER_PILOT.md`).
 
 ## Sécurité / Supabase
 
@@ -43,23 +45,27 @@ La conception tient compte du changement Supabase 2026: les nouvelles tables ne 
 
 ## Arborescence
 
-- `index.html` / `styles.css` / `app.js`: prototype web M2
-- `engine.mjs`: moteur d'éligibilité/matching
+- `index.html` / `styles.css` / `app.js`: prototype web M2.1
+- `engine.mjs`: moteur d'éligibilité, pertinence et disponibilité
 - `workspace.mjs`: persistance, historique et GrantWatch local
-- `data/programs.json`: catalogue structuré
+- `data/programs.json`: catalogue de base
+- `data/programs_2026q4.json`: extension catalogue Q4 2026
 - `data/catalog.meta.json`: version du catalogue
+- `data/pilot_cases.json`: cas de validation
 - `tests/`: tests de régression
 - `scripts/catalog-audit.mjs`: contrôle qualité des données
+- `scripts/pilot-benchmark.mjs`: benchmark des cas pilotes
 - `scripts/source-health.mjs`: contrôle des sources officielles
 - `supabase/migrations/`: schéma cible Supabase
-- `CODEX_M3_BRIEF.md`: spécification pour la conversion en vraie application Next.js/Supabase
+- `PARTNER_PILOT.md`: protocole de validation avec l'écosystème PME
+- `CODEX_M3_BRIEF.md`: spécification de conversion en application Next.js/Supabase
 
 ## Prochain jalon: M3
 
 1. Next.js App Router.
 2. Auth Supabase avec clé publishable et SSR.
-3. Migration SQL appliquée à un projet Supabase.
-4. Remplacement du stockage local par le backend, avec migration automatique des données locales.
+3. Migration SQL appliquée à un projet Supabase isolé.
+4. Remplacement du stockage local par le backend, avec migration des données locales.
 5. GrantWatch serveur planifié.
-6. Extension contrôlée du catalogue.
-7. Dossier Builder après validation terrain du matching.
+6. Validation terrain avec partenaires.
+7. Dossier Builder seulement après validation du matching.

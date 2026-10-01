@@ -1,11 +1,12 @@
 {
   "name": "subvench-engine",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "scripts": {
-    "test": "node tests/engine.test.mjs && node tests/workspace.test.mjs && node scripts/catalog-audit.mjs",
+    "test": "node tests/engine.test.mjs && node tests/workspace.test.mjs && node scripts/catalog-audit.mjs && node scripts/pilot-benchmark.mjs",
     "audit:catalog": "node scripts/catalog-audit.mjs",
+    "benchmark": "node scripts/pilot-benchmark.mjs",
     "check:sources": "node scripts/source-health.mjs"
   }
 }

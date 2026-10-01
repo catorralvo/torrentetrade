@@ -36,11 +36,12 @@ export function addWatchAlerts(state,projectId,previousResults,currentResults,ca
   for(const [pid,next] of after){
     const prev=before.get(pid);
     if(!prev&&next.eligibility!=='not_eligible'&&next.relevance>=40)alerts.push(makeAlert(projectId,pid,'new_match','Nouvelle piste détectée',`${next.program_name} correspond désormais au projet (${next.relevance}% de pertinence).`,catalogVersion));
+    else if(prev&&prev.availability&&next.availability&&prev.availability!==next.availability)alerts.push(makeAlert(projectId,pid,'program_changed','Disponibilité modifiée',`${next.program_name}: ${prev.availability} → ${next.availability}.`,catalogVersion));
     else if(prev&&prev.eligibility!==next.eligibility)alerts.push(makeAlert(projectId,pid,'eligibility_changed','Éligibilité à revoir',`${next.program_name}: ${prev.eligibility} → ${next.eligibility}.`,catalogVersion));
     else if(prev&&Math.abs((prev.relevance||0)-(next.relevance||0))>=15)alerts.push(makeAlert(projectId,pid,'program_changed','Pertinence modifiée',`${next.program_name}: ${prev.relevance}% → ${next.relevance}%.`,catalogVersion));
   }
   if(alerts.length){state.alerts.unshift(...alerts);state.alerts=state.alerts.slice(0,100);}return alerts;
 }
 function makeAlert(project_id,program_id,kind,title,body,catalog_version){return{id:id(),project_id,program_id,kind,title,body,catalog_version,created_at:new Date().toISOString(),read_at:null};}
-function leanResult(x){return{program_id:x.program?.id||x.program_id,program_name:x.program?.name||x.program_name,eligibility:x.eligibility,relevance:x.relevance,checks:x.checks||[],blockers:x.blockers||[]};}
+function leanResult(x){return{program_id:x.program?.id||x.program_id,program_name:x.program?.name||x.program_name,eligibility:x.eligibility,relevance:x.relevance,availability:x.availability?.code||x.availability||null,checks:x.checks||[],blockers:x.blockers||[]};}
 export function exportWorkspace(state){return JSON.stringify(state,null,2);}
