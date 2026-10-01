@@ -1,8 +1,59 @@
-name: DON'T 100 APK test
+name: Build DON'T 100 Test APK
+
 on:
+  push:
+    branches:
+      - dont100-apk-test-v4-2
+    paths:
+      - 'dont100-apk/**'
+      - '.github/workflows/dont100-apk-test.yml'
   workflow_dispatch:
+
 jobs:
-  noop:
+  build-apk:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - run: echo ready
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK 36
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.14.3'
+
+      - name: Restore embedded game
+        run: |
+          mkdir -p dont100-apk/app/src/main/assets
+          cat dont100-apk/webchunks/part-00 dont100-apk/webchunks/chunk-* > dont100-apk/index.xz.b64
+          base64 -d dont100-apk/index.xz.b64 > dont100-apk/index.html.xz
+          xz -d -c dont100-apk/index.html.xz > dont100-apk/app/src/main/assets/index.html
+          test "$(sha256sum dont100-apk/app/src/main/assets/index.html | cut -d' ' -f1)" = "0ff7d5863fbe66cf86a2281f8518ce248be09c39dbe43afdf813c6cd787f46f9"
+
+      - name: Build debug APK
+        working-directory: dont100-apk
+        run: gradle :app:assembleDebug --stacktrace
+
+      - name: Rename APK
+        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2-RC1-TEST.apk"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dont100-v4.2-rc1-test-apk
+          path: DONT-100-v4.2-RC1-TEST.apk
+          retention-days: 30
