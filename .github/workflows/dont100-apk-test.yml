@@ -1,0 +1,8 @@
+name: DON'T 100 APK test
+on:
+  workflow_dispatch:
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ready
