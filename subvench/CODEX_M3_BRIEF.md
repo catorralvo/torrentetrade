@@ -14,6 +14,12 @@ Do not redesign the product concept. Do not add payments. Do not make an LLM dec
 - Node 22
 - Deploy target: standard Next.js hosting; keep hosting provider decoupled
 
+### Supabase target already selected
+
+M3 must use the existing Supabase project `nidtuadgopthrydmmqcq` (`https://nidtuadgopthrydmmqcq.supabase.co`). This project also contains the DON’T 100 backend. Do not modify or rename any `dont100_*` object. SubvenCH objects are isolated by the `subvench_*` prefix and their own RLS policies. Read `SUPABASE_SHARED_PROJECT.md` before changing Auth/RLS because DON’T 100 may use anonymous Auth while SubvenCH explicitly blocks anonymous users from private tables.
+
+Migrations `subvench_m2`, `subvench_shared_project_hardening`, and `subvench_optimize_anonymous_guard` have already been applied to the live project. Keep the matching SQL files in source control; future schema changes must be new migrations, not manual drift.
+
 Use current Supabase conventions:
 
 - `NEXT_PUBLIC_SUPABASE_URL`
@@ -35,9 +41,9 @@ Use current Supabase conventions:
 ## Existing reusable modules
 
 - `/subvench/engine.mjs`: port to TypeScript with identical behavior first; improve only behind tests.
-- `/subvench/data/programs.json`: seed catalogue.
+- `/subvench/data/programs.json` plus `/subvench/data/programs.m21.json`: seed catalogue inputs.
 - `/subvench/workspace.mjs`: reference behavior for profiles/projects/scans/watches/alerts.
-- `/subvench/supabase/migrations/0001_subvench_m2.sql`: initial backend contract.
+- `/subvench/supabase/migrations/`: live backend contract and hardening history.
 - `/subvench/tests/`: regression expectations.
 
 ## Required routes
@@ -107,12 +113,14 @@ After first authenticated login, if local M2 data exists and the account has no 
 - RLS enabled on every exposed table.
 - Explicit grants are mandatory.
 - Every user-owned policy combines `TO authenticated` with ownership predicate `(select auth.uid()) = user_id`.
+- SubvenCH private tables must retain the restrictive `is_anonymous` guard because this Supabase project is shared with DON’T 100.
 - UPDATE policies need both `USING` and `WITH CHECK`.
 - Do not use `user_metadata` for authorization.
 - Do not expose service/secret keys to the client.
 - Do not use `SECURITY DEFINER` merely to bypass a permission problem.
 - If a privileged function is genuinely needed, place it in a non-exposed schema, revoke PUBLIC execute, and validate `auth.uid()` where relevant.
 - Add indexes for columns used by RLS and common filters.
+- Do not change shared project-wide Auth behavior solely for SubvenCH without checking DON’T 100 compatibility.
 
 ## Testing
 
@@ -126,7 +134,7 @@ Minimum automated coverage:
 - GrantWatch: new match alert;
 - GrantWatch: eligibility changed alert;
 - user A cannot read/update/delete user B profile/project/scan/watch/alert;
-- anonymous user cannot read user-owned tables;
+- anonymous Supabase user cannot read or write SubvenCH user-owned tables;
 - catalogue audit: unique IDs, source URL, verification date, required fields.
 
 ## UI
@@ -157,4 +165,4 @@ Each result card must show:
 
 ## Definition of done
 
-M3 is done when an authenticated user can create a company profile, create a project, run the existing evidence engine, persist the scan, return later, see scan history, enable GrantWatch, and see generated alerts after a catalog-version change — with RLS tests proving cross-user isolation.
+M3 is done when an authenticated user can create a company profile, create a project, run the existing evidence engine, persist the scan, return later, see scan history, enable GrantWatch, and see generated alerts after a catalog-version change — with RLS tests proving cross-user isolation and anonymous-user exclusion.
