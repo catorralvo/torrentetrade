@@ -1,0 +1,27 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'game.dont100.test'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'game.dont100.test'
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName '4.2.0-rc.1-test'
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
