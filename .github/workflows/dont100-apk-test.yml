@@ -47,19 +47,96 @@ jobs:
           cat dont100-apk/webchunks/part-00 dont100-apk/webchunks/chunk-* > dont100-apk/index.xz.b64
           base64 -d dont100-apk/index.xz.b64 > dont100-apk/index.html.xz
           xz -d -c dont100-apk/index.html.xz > dont100-apk/app/src/main/assets/index.html
-          echo "Embedded payload SHA256: $(sha256sum dont100-apk/app/src/main/assets/index.html | cut -d' ' -f1)"
           test -s dont100-apk/app/src/main/assets/index.html
+
+      - name: Apply RC1.1 mobile playtest hotfix
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('dont100-apk/app/src/main/assets/index.html')
+          s=p.read_text(encoding='utf-8')
+
+          # Diagnostic build: deterministic deck with KEEP IT UP at level 18,
+          # and begin at 18 only on a fresh install so the blocker can be re-tested immediately.
+          s=s.replace('window.D100V4={runSeed:(()=>{try{const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]}catch{return Date.now()}})(),runId:"apk-test"',
+                      'window.D100V4={runSeed:4,runId:"apk-testfix"')
+          s=s.replace('const BUILD="4.2.0-rc.1"','const BUILD="4.2.0-rc.1.1-testfix"')
+          s=s.replace('level:Math.min(100,Math.max(1,Number(localStorage.getItem(STORAGE.level)||1))),',
+                      'level:Math.min(100,Math.max(1,Number(localStorage.getItem(STORAGE.level)||18))),')
+          s=s.replace('best:Math.min(100,Math.max(1,Number(localStorage.getItem(STORAGE.best)||1))),',
+                      'best:Math.min(100,Math.max(1,Number(localStorage.getItem(STORAGE.best)||18))),')
+
+          # KEEP IT UP: remove the unfair fixed timeout. The player controls touches, not gravity speed.
+          start=s.index('function runKeepUp(')
+          end=s.index('\nfunction runLaserMaze', start)
+          block=s[start:end]
+          block=block.replace('Toca la pelota antes de que caiga.','Toca la pelota cuando baje. No hay límite de tiempo.')
+          block=block.replace('Tap the ball before it drops.','Tap the ball as it drops. No time limit.')
+          block=block.replace("Touche la balle avant qu'elle tombe.","Touche la balle quand elle descend. Pas de limite de temps.")
+          block=block.replace('let x=180,y=90,vx=45,vy=20,last=performance.now(),got=0;c.addEventListener("pointerdown",e=>{',
+                              'let x=180,y=90,vx=45,vy=20,last=performance.now(),got=0,lastTouch=0;c.addEventListener("pointerdown",e=>{const now=performance.now();')
+          block=block.replace('if(Math.hypot(px-x,py-y)<28){vy=-175;vx+=(px-x)*1.1;got++;',
+                              'if(Math.hypot(px-x,py-y)<30){if(now-lastTouch<240)return;lastTouch=now;vy=-170;vx+=(px-x)*.85;got++;')
+          block=block.replace('});later(()=>fail(t("generic.tooSlow")),12000);','});')
+          s=s[:start]+block+s[end:]
+
+          # More natural mascot movement.
+          s=s.replace('const swing=Math.sin(t*.012)*10;','const swing=Math.sin(t*.006)*9;')
+
+          # Mobile hotfix: readable instructions, no document scrolling, fit the full playfield in the viewport.
+          hotfix=r'''
+/* v4.2 RC1.1 mobile playtest hotfix */
+html,body{height:100%;max-height:100dvh;overflow:hidden}
+body{min-height:100dvh;overscroll-behavior:none}
+.shell{height:100dvh;min-height:0;max-height:100dvh;overflow:hidden;padding:max(8px,env(safe-area-inset-top)) 10px max(8px,env(safe-area-inset-bottom));gap:7px}
+.game-card{min-height:0!important;flex:1;padding:13px 14px}
+.challenge{margin:7px 0 3px}
+.challenge h1{font-size:clamp(27px,7.8vw,34px);line-height:1.02;margin-bottom:6px}
+.challenge p{font-size:clamp(14px,4vw,16px);line-height:1.25;font-weight:760;color:#4f4b45;min-height:0}
+.play-area{min-height:0;flex:1;padding:5px 0;margin-top:3px}
+.mascot-zone{min-height:118px;margin-top:0}
+.stickman{max-height:138px}
+body.arcade-level .game-card{min-height:0!important}
+body.arcade-level .play-area{min-height:0;flex:1;padding:5px 0;margin-top:3px}
+body.arcade-level .arcade-wrap,body.arcade-level .arcade-canvas{height:clamp(168px,29dvh,245px)}
+footer{flex:none;font-size:8px;padding:0 2px;gap:5px}
+.stickman.sprite-panic{animation-duration:.28s!important}
+.stickman.sprite-nervous{animation-duration:.62s!important}
+.stickman.sprite-dance{animation-duration:1.05s!important}
+.stickman.sprite-win{animation-duration:.58s!important}
+.stickman.rope-jump{animation-duration:.36s!important}
+.jump-rope-loop.rope-spin{animation-duration:.42s!important}
+@media(max-height:760px){
+ .topbar{transform:scale(.94);transform-origin:center top;margin-bottom:-3px}
+ .progress-wrap{margin-top:-3px}
+ .timer-strip{gap:5px}.timer-box{padding:5px 8px}
+ .game-card{padding:10px 12px}
+ .challenge h1{font-size:clamp(24px,7vw,30px)}
+ .challenge p{font-size:13px}
+ .mascot-zone{min-height:96px}.stickman{height:112px}
+ body.arcade-level .arcade-wrap,body.arcade-level .arcade-canvas{height:clamp(150px,27dvh,205px)}
+}
+'''
+          s=s.replace('</style>',hotfix+'\n</style>',1)
+
+          p.write_text(s,encoding='utf-8')
+          print('hotfixed bytes',p.stat().st_size)
+          print('keepup timeout present?', 'function runKeepUp' in s and 'No hay límite de tiempo.' in s)
+          PY
+          echo "Embedded payload SHA256: $(sha256sum dont100-apk/app/src/main/assets/index.html | cut -d' ' -f1)"
 
       - name: Build debug APK
         working-directory: dont100-apk
         run: gradle :app:assembleDebug --stacktrace --no-daemon
 
       - name: Rename APK
-        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2-RC1-TEST.apk"
+        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2-RC1.1-TESTFIX.apk"
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dont100-v4.2-rc1-test-apk
-          path: DONT-100-v4.2-RC1-TEST.apk
+          name: dont100-v4.2-rc1.1-testfix-apk
+          path: DONT-100-v4.2-RC1.1-TESTFIX.apk
           retention-days: 30
