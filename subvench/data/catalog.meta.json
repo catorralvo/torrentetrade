@@ -1,9 +1,9 @@
 {
-  "version": "2026-10-01.1",
+  "version": "2026-10-01.2",
   "verified_on": "2026-10-01",
   "scope": ["VD", "GE", "CH"],
-  "program_count": 15,
-  "engine_compatibility": "m2-local-1",
+  "program_count": 25,
+  "engine_compatibility": "m2.1-local-1",
   "next_review_due": "2026-10-15",
-  "notes": "Initial evidence-backed catalog. Each programme keeps its own official source URL and verification date."
+  "notes": "Evidence-backed catalog covering 25 structured instruments. Each programme keeps its official source URL, verification date and current availability state or manual check."
 }
