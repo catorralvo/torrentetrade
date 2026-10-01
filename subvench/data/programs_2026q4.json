@@ -1,0 +1,106 @@
+[
+  {
+    "id":"ge-opi-fip","name":"Fonds Installation Pilote (FIP)","authority":"OPI Genève","level":"cantonal","cantons":["GE"],
+    "company_profile":{"max_fte":249,"requires_industrial_company":true},
+    "project_types":["innovation","prototype","production","digitalisation"],
+    "keywords":["installation pilote","prototype","pilote","industrialisation","nouveau produit","nouveau service","nouveau processus"],
+    "funding":{"type":"grant","amount_max_chf":50000,"note":"subside jusqu'à CHF 50'000 TTC selon les conditions FIP"},
+    "hard_requirements":["PME industrielle du canton de Genève","Projet pilote innovant en phase de démarrage","Intervention entre faisabilité et industrialisation"],
+    "manual_checks":["Confirmer la fenêtre de candidature FIP en cours et les coûts admissibles.","Vérifier les éventuels partenaires d'implémentation ou académiques prévus au dossier."],
+    "documents":["Dossier FIP selon l'appel à projets OPI"],"status":"call_based",
+    "source":"https://www.opi.ch/fr/prestations/accompagnement-projets/","verified_on":"2026-10-01"
+  },
+  {
+    "id":"ch-prokilowatt-project","name":"ProKilowatt – projet d'efficience électrique","authority":"Office fédéral de l'énergie / ProKilowatt","level":"federal","cantons":["ALL"],
+    "company_profile":{"requires_project_not_started":true},
+    "project_types":["energy","investment","equipment","production"],
+    "keywords":["efficience électrique","électricité","froid","éclairage","air comprimé","pompe","moteur","centre de calcul","économie d'électricité"],
+    "funding":{"type":"grant","rate_max":0.30,"amount_min_chf":20000,"note":"contribution demandée au maximum 30% des coûts d'investissement; sélection selon coût-efficacité"},
+    "hard_requirements":["Mesure d'efficience électrique au-delà des exigences légales","Mesure pas encore mise en œuvre","Projet soumis aux conditions ProKilowatt en vigueur"],
+    "manual_checks":["Vérifier le temps de retour sur investissement et les seuils d'investissement applicables.","Calculer les économies d'électricité selon la méthode/technologie concernée."],
+    "documents":["Demande ProKilowatt","Calcul d'économies","Offres ou justificatifs de coûts"],"status":"open",
+    "source":"https://www.prokw.ch/subvention/","verified_on":"2026-10-01"
+  },
+  {
+    "id":"ch-technology-fund","name":"Fonds de technologie","authority":"Confédération – OFEV","level":"federal","cantons":["ALL"],
+    "company_profile":{"requires_swiss_value_creation":true},
+    "project_types":["energy","innovation","investment","financing"],
+    "keywords":["gaz à effet de serre","co2","ressources","énergie renouvelable","efficacité énergétique","cleantech","garantie","prêt"],
+    "funding":{"type":"guarantee","note":"cautionnement de prêts pour entreprises développant et commercialisant des technologies climatiques/ressources innovantes"},
+    "hard_requirements":["Entreprise développant et commercialisant une technologie ou méthodologie innovante correspondant au mandat du Fonds"],
+    "manual_checks":["Confirmer l'éligibilité technologique, la capacité de remboursement et les conditions du prêteur auprès de l'organe de gestion du Fonds."],
+    "documents":["Dossier technologique, commercial et financier selon le Fonds de technologie"],"status":"open",
+    "source":"https://www.bafu.admin.ch/fr/fonds-tech","verified_on":"2026-10-01"
+  },
+  {
+    "id":"ch-eurostars-2026","name":"Eurostars – projets internationaux de R&D","authority":"Innosuisse / Eureka","level":"international","cantons":["ALL"],
+    "company_profile":{"max_fte":249},
+    "project_types":["innovation","research","internationalisation","product"],
+    "keywords":["eurostars","partenaire international","consortium","r&d","recherche internationale","produit innovant","service innovant"],
+    "funding":{"type":"grant","note":"financement selon les conditions Innosuisse applicables aux participants suisses Eurostars"},
+    "hard_requirements":["Projet international orienté marché","Consortium avec partenaires de pays Eurostars","Programme particulièrement destiné aux PME innovantes"],
+    "manual_checks":["L'appel lancé le 9 juillet 2026 a fermé le 10 septembre 2026; vérifier le prochain appel Eurostars.","Confirmer le rôle de la PME suisse et la composition admissible du consortium."],
+    "documents":["Dossier Eurostars","Documents financiers Innosuisse pour participants suisses"],"status":"closed_call_2026-09-10",
+    "source":"https://www.innosuisse.admin.ch/en/eurostars-projects","verified_on":"2026-10-01"
+  },
+  {
+    "id":"ge-fongit-fif-tech","name":"FIF Tech","authority":"FONGIT / Canton de Genève","level":"cantonal","cantons":["GE"],
+    "company_profile":{},"project_types":["innovation","startup","scaleup","product"],
+    "keywords":["tech","technologie","startup","scale-up","innovation difficile à répliquer","croissance"],
+    "funding":{"type":"grant_or_financing","amount_max_chf":400000,"note":"FIF Grant CHF 50k, Seed Tech CHF 100k et Growth jusqu'à CHF 400k selon stade et conditions"},
+    "hard_requirements":["Projet/entreprise innovante à Genève","Innovation technologique difficile à répliquer et potentiel de croissance"],
+    "manual_checks":["Identifier le bon instrument FIF Tech (Grant, Seed ou Growth) et vérifier ses conditions financières détaillées.","Confirmer le stade, la localisation genevoise et les critères du comité de sélection."],
+    "documents":["Candidature FIF et pièces selon instrument"],"status":"open",
+    "source":"https://www.fongit.ch/fif-tech","verified_on":"2026-10-01"
+  },
+  {
+    "id":"ge-fongit-fif-digital","name":"FIF Digital","authority":"FONGIT / Canton de Genève","level":"cantonal","cantons":["GE"],
+    "company_profile":{"requires_startup":true},"project_types":["digitalisation","startup","scaleup","innovation"],
+    "keywords":["numérique","digital","logiciel","plateforme","saas","premiers utilisateurs","croissance"],
+    "funding":{"type":"grant_or_financing","amount_max_chf":400000,"note":"Seed Digital CHF 50k; Growth jusqu'à CHF 400k selon stade et conditions"},
+    "hard_requirements":["Start-up genevoise de technologie numérique","Produit/service innovant, difficilement réplicable et à fort potentiel de croissance"],
+    "manual_checks":["Confirmer le stade produit, les premiers utilisateurs/clients et le potentiel de création d'emplois à Genève.","Identifier l'instrument FIF Digital adapté et ses conditions financières."],
+    "documents":["Candidature FIF Digital et pièces selon instrument"],"status":"open",
+    "source":"https://www.fongit.ch/fr/fif-digital","verified_on":"2026-10-01"
+  },
+  {
+    "id":"ge-fongit-fif-impact","name":"FIF Impact","authority":"FONGIT / Canton de Genève","level":"cantonal","cantons":["GE"],
+    "company_profile":{"requires_startup":true},"project_types":["impact","startup","innovation"],
+    "keywords":["impact social","impact environnemental","impact économique","esg","durable","innovation"],
+    "funding":{"type":"grant","amount_max_chf":20000,"note":"FIF Seed Impact CHF 20k"},
+    "hard_requirements":["Start-up genevoise early-stage","Impact social, environnemental ou économique positif","Caractère innovant et difficile à répliquer"],
+    "manual_checks":["Confirmer les critères ESG, le besoin adressé et le potentiel de marché."],
+    "documents":["Candidature FIF Impact"],"status":"open",
+    "source":"https://www.fongit.ch/fif-impact","verified_on":"2026-10-01"
+  },
+  {
+    "id":"ge-fondetec-microcredit","name":"Micro-crédit entreprise Fondetec","authority":"Fondetec – Ville de Genève","level":"municipal","cantons":["GE"],
+    "company_profile":{"requires_local_jobs_impact":true},"project_types":["financing","startup","investment"],
+    "keywords":["micro-crédit","microcredit","démarrage","trésorerie","financement","ville de genève"],
+    "funding":{"type":"loan","amount_max_chf":30000,"note":"micro-crédit entreprise jusqu'à CHF 30'000"},
+    "hard_requirements":["Siège sur le territoire de la Ville de Genève","Projet économiquement viable","Création ou maintien d'emplois locaux"],
+    "manual_checks":["Le canton GE ne suffit pas: confirmer que le siège est bien en Ville de Genève.","Confirmer les règles Fondetec relatives aux CCT, égalité, cadre légal et frais d'étude éventuels."],
+    "documents":["Dossier de financement Fondetec","Prévisionnel financier / business plan"],"status":"open",
+    "source":"https://fondetec.ch/","verified_on":"2026-10-01"
+  },
+  {
+    "id":"vd-fit-tech","name":"FIT Tech","authority":"Fondation pour l'Innovation et la Technologie (FIT)","level":"regional","cantons":["VD"],
+    "company_profile":{"requires_startup":true},"project_types":["startup","innovation","product","scaleup"],
+    "keywords":["deeptech","high-tech","technologie","startup","université","epfl","industrialisation","validation marché"],
+    "funding":{"type":"grant_or_loan","amount_max_chf":500000,"note":"Tech Grant CHF 100k; instruments Seed/Growth selon stade, Growth jusqu'à CHF 500k"},
+    "hard_requirements":["Innovation technologique difficile à imiter et fort potentiel de croissance","Critères de localisation/stade variant selon instrument FIT Tech"],
+    "manual_checks":["Identifier l'instrument FIT Tech correspondant au stade exact de l'entreprise.","Vérifier le lien avec une haute école et les conditions de localisation/équipe propres à l'instrument."],
+    "documents":["Candidature via Innovaud / mécanisme accrédité selon instrument"],"status":"open_or_call_based",
+    "source":"https://www.fondation-fit.ch/fr/prets-et-bourses/nos-soutiens-aux-start-ups/fit-tech","verified_on":"2026-10-01"
+  },
+  {
+    "id":"vd-fit-digital","name":"FIT Digital","authority":"Fondation pour l'Innovation et la Technologie (FIT)","level":"cantonal","cantons":["VD"],
+    "company_profile":{"requires_startup":true},"project_types":["digitalisation","startup","scaleup","innovation"],
+    "keywords":["digital","numérique","business model","beta","mvp","premiers clients","scalable","logiciel"],
+    "funding":{"type":"grant_or_loan","amount_max_chf":200000,"note":"Digital Grant CHF 20k; Digital Seed CHF 50k; Digital Growth CHF 200k"},
+    "hard_requirements":["Modèle d'affaires digital innovant, difficile à imiter et à fort potentiel de croissance","Création/incorporation et potentiel d'emplois dans le canton de Vaud selon stade"],
+    "manual_checks":["Identifier Grant, Seed ou Growth selon l'âge, l'équipe, le produit et les fonds déjà disponibles.","Vérifier les seuils de fonds propres/levée et les limites sur les aides déjà reçues."],
+    "documents":["Candidature FIT Digital"],"status":"open_or_call_based",
+    "source":"https://www.fondation-fit.ch/en/loans-and-grants/our-support-for-start-ups/fit-digital","verified_on":"2026-10-01"
+  }
+]
