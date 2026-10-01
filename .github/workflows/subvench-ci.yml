@@ -1,0 +1,22 @@
+name: SubvenCH CI
+
+on:
+  push:
+    paths:
+      - 'subvench/**'
+  pull_request:
+    paths:
+      - 'subvench/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: subvench
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test

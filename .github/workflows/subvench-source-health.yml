@@ -1,0 +1,27 @@
+name: SubvenCH Source Health
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * 2'
+
+jobs:
+  source-health:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: subvench
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check official source URLs
+        run: npm run check:sources
+      - name: Upload source health report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: subvench-source-health
+          path: subvench/data/source-health.latest.json
+          retention-days: 14

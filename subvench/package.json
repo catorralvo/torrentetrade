@@ -1,0 +1,11 @@
+{
+  "name": "subvench-engine",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/engine.test.mjs && node tests/workspace.test.mjs && node scripts/catalog-audit.mjs",
+    "audit:catalog": "node scripts/catalog-audit.mjs",
+    "check:sources": "node scripts/source-health.mjs"
+  }
+}
