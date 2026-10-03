@@ -1,11 +1,12 @@
-name: Build DON'T 100 Test APK
+name: Build DON'T 100 RC1.3 Visual Test APK
 
 on:
   push:
     branches:
-      - dont100-apk-test-v4-2
+      - dont100-rc13-visual-test
     paths:
       - 'dont100-apk/**'
+      - 'dont100-rc13-patch/**'
       - '.github/workflows/dont100-apk-test.yml'
   workflow_dispatch:
 
@@ -37,32 +38,43 @@ jobs:
         with:
           gradle-version: '8.13'
 
-      - name: Restore embedded game
+      - name: Restore RC1.2 embedded game
         run: |
           set -euxo pipefail
           mkdir -p dont100-apk/app/src/main/assets
           cat dont100-apk/webchunks/part-00 dont100-apk/webchunks/chunk-* > dont100-apk/index.xz.b64
           base64 -d dont100-apk/index.xz.b64 > dont100-apk/index.html.xz
           xz -d -c dont100-apk/index.html.xz > dont100-apk/app/src/main/assets/index.html
-          test -s dont100-apk/app/src/main/assets/index.html
-
-      - name: Apply RC1.2 mobile polish + level 18 fix
-        run: |
           python dont100-apk/rc12_patch.py
           grep -q '4.2.0-rc.1.2-polish' dont100-apk/app/src/main/assets/index.html
           grep -q 'No hay límite de tiempo.' dont100-apk/app/src/main/assets/index.html
-          echo "Embedded payload SHA256: $(sha256sum dont100-apk/app/src/main/assets/index.html | cut -d' ' -f1)"
+
+      - name: Apply RC1.3 visual and mobile-control upgrade
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cat dont100-rc13-patch/part-* > /tmp/rc13.patch.xz.b64
+          base64 -d /tmp/rc13.patch.xz.b64 > /tmp/rc13.patch.xz
+          xz -d -c /tmp/rc13.patch.xz > /tmp/rc13.patch
+          cd dont100-apk/app/src/main/assets
+          patch -p0 < /tmp/rc13.patch
+          grep -q '4.2.0-rc.1.3-visual' index.html
+          grep -q 'No hay límite de tiempo.' index.html
+          grep -q 'function arcadeControlZone' index.html
+          grep -q 'devicePixelRatio' index.html
+          grep -q 'DESLIZA ABAJO PARA MOVER LA BARRA' index.html || true
+          echo "Embedded payload SHA256: $(sha256sum index.html | cut -d' ' -f1)"
 
       - name: Build debug APK
         working-directory: dont100-apk
         run: gradle :app:assembleDebug --stacktrace --no-daemon
 
       - name: Rename APK
-        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2-RC1.2-POLISHED-TEST.apk"
+        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2-RC1.3-VISUAL-TEST.apk"
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dont100-v4.2-rc1.2-polished-test-apk
-          path: DONT-100-v4.2-RC1.2-POLISHED-TEST.apk
+          name: dont100-v4.2-rc1.3-visual-test-apk
+          path: DONT-100-v4.2-RC1.3-VISUAL-TEST.apk
           retention-days: 30
