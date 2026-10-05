@@ -7,11 +7,11 @@ android {
     compileSdk 36
 
     defaultConfig {
-        applicationId 'game.dont100.finaltestapp'
+        applicationId 'game.dont100.finalfix'
         minSdk 24
         targetSdk 36
-        versionCode 4
-        versionName '4.2.0-final-release'
+        versionCode 5
+        versionName '4.2.1-finalfix'
     }
 
     buildTypes {
