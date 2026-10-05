@@ -1,4 +1,4 @@
-name: Build DON'T 100 FinalFix APK
+name: Build DON'T 100 Visual Pro APK
 
 on:
   push:
@@ -40,25 +40,39 @@ jobs:
           cat dont100-apk/webchunks/part-00 dont100-apk/webchunks/chunk-* > dont100-apk/index.xz.b64
           base64 -d dont100-apk/index.xz.b64 > dont100-apk/index.html.xz
           xz -d -c dont100-apk/index.html.xz > dont100-apk/app/src/main/assets/index.html
-      - name: Apply RC1.2 baseline
+      - name: Apply mobile baseline
         run: python dont100-apk/rc12_patch.py
-      - name: Apply FINAL art direction
+      - name: Apply approved art direction
         run: python dont100-apk/rc_final_patch.py
-      - name: Apply screenshot-driven FINALFIX
+      - name: Apply screenshot corrections
+        run: python dont100-apk/rc_final2_patch.py
+      - name: Apply Visual Pro arcade pass
         run: |
-          python dont100-apk/rc_final2_patch.py
-          grep -q '4.2.1-finalfix' dont100-apk/app/src/main/assets/index.html
+          python dont100-apk/rc_visualpro_patch.py
+          grep -q '4.2.2-visualpro' dont100-apk/app/src/main/assets/index.html
           grep -q 'jumprope:"tap"' dont100-apk/app/src/main/assets/index.html
           grep -q 'No hay límite de tiempo.' dont100-apk/app/src/main/assets/index.html
+          grep -q 'DESLIZA PARA ESQUIVAR' dont100-apk/app/src/main/assets/index.html
           echo "Embedded payload SHA256: $(sha256sum dont100-apk/app/src/main/assets/index.html | cut -d' ' -f1)"
+      - name: JavaScript syntax check
+        shell: bash
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          s=Path('dont100-apk/app/src/main/assets/index.html').read_text(encoding='utf-8')
+          blocks=re.findall(r'<script[^>]*>(.*?)</script>',s,re.S)
+          Path('/tmp/dont100-game.js').write_text(blocks[-1],encoding='utf-8')
+          PY
+          node --check /tmp/dont100-game.js
       - name: Build debug APK
         working-directory: dont100-apk
         run: gradle :app:assembleDebug --stacktrace --no-daemon
       - name: Rename APK
-        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2.1-FINALFIX.apk"
+        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2.2-VISUAL-PRO.apk"
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dont100-v4.2.1-finalfix-apk
-          path: DONT-100-v4.2.1-FINALFIX.apk
+          name: dont100-v4.2.2-visual-pro-apk
+          path: DONT-100-v4.2.2-VISUAL-PRO.apk
           retention-days: 30
