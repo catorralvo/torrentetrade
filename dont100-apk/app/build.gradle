@@ -7,11 +7,11 @@ android {
     compileSdk 36
 
     defaultConfig {
-        applicationId 'game.dont100.finalfix'
+        applicationId 'game.dont100.visualpro'
         minSdk 24
         targetSdk 36
-        versionCode 5
-        versionName '4.2.1-finalfix'
+        versionCode 6
+        versionName '4.2.2-visualpro'
     }
 
     buildTypes {
