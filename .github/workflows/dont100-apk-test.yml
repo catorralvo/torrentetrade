@@ -1,4 +1,4 @@
-name: Build DON'T 100 Final APK
+name: Build DON'T 100 FinalFix APK
 
 on:
   push:
@@ -16,13 +16,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up JDK 17
         uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
-
       - name: Accept Android SDK licenses and install API 36
         shell: bash
         run: |
@@ -31,12 +29,10 @@ jobs:
           if [ ! -x "$SDKMANAGER" ]; then SDKMANAGER="$(command -v sdkmanager)"; fi
           yes | "$SDKMANAGER" --licenses >/dev/null || true
           "$SDKMANAGER" "platforms;android-36" "build-tools;36.0.0" "platform-tools"
-
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.13'
-
       - name: Restore embedded game
         run: |
           set -euxo pipefail
@@ -44,31 +40,25 @@ jobs:
           cat dont100-apk/webchunks/part-00 dont100-apk/webchunks/chunk-* > dont100-apk/index.xz.b64
           base64 -d dont100-apk/index.xz.b64 > dont100-apk/index.html.xz
           xz -d -c dont100-apk/index.html.xz > dont100-apk/app/src/main/assets/index.html
-          test -s dont100-apk/app/src/main/assets/index.html
-
-      - name: Apply RC1.2 functional and visual baseline
+      - name: Apply RC1.2 baseline
+        run: python dont100-apk/rc12_patch.py
+      - name: Apply FINAL art direction
+        run: python dont100-apk/rc_final_patch.py
+      - name: Apply screenshot-driven FINALFIX
         run: |
-          python dont100-apk/rc12_patch.py
+          python dont100-apk/rc_final2_patch.py
+          grep -q '4.2.1-finalfix' dont100-apk/app/src/main/assets/index.html
+          grep -q 'jumprope:"tap"' dont100-apk/app/src/main/assets/index.html
           grep -q 'No hay límite de tiempo.' dont100-apk/app/src/main/assets/index.html
-
-      - name: Apply FINAL art direction and mobile controls
-        run: |
-          python dont100-apk/rc_final_patch.py
-          grep -q '4.2.0-final' dont100-apk/app/src/main/assets/index.html
-          grep -q 'arcade-control-deck' dont100-apk/app/src/main/assets/index.html
-          grep -q 'runSeed:(()=>{' dont100-apk/app/src/main/assets/index.html
           echo "Embedded payload SHA256: $(sha256sum dont100-apk/app/src/main/assets/index.html | cut -d' ' -f1)"
-
       - name: Build debug APK
         working-directory: dont100-apk
         run: gradle :app:assembleDebug --stacktrace --no-daemon
-
       - name: Rename APK
-        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2-FINAL.apk"
-
+        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2.1-FINALFIX.apk"
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dont100-v4.2-final-apk
-          path: DONT-100-v4.2-FINAL.apk
+          name: dont100-v4.2.1-finalfix-apk
+          path: DONT-100-v4.2.1-FINALFIX.apk
           retention-days: 30
