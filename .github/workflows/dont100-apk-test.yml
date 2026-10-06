@@ -1,4 +1,4 @@
-name: Build DON'T 100 Visual Pro APK
+name: Build DON'T 100 PRO 3D Final APK
 
 on:
   push:
@@ -46,13 +46,15 @@ jobs:
         run: python dont100-apk/rc_final_patch.py
       - name: Apply screenshot corrections
         run: python dont100-apk/rc_final2_patch.py
-      - name: Apply Visual Pro arcade pass
+      - name: Apply Visual Pro pass
+        run: python dont100-apk/rc_visualpro_patch.py
+      - name: Apply PRO 3D final pass
         run: |
-          python dont100-apk/rc_visualpro_patch.py
-          grep -q '4.2.2-visualpro' dont100-apk/app/src/main/assets/index.html
+          python dont100-apk/rc_pro3d_patch.py
+          grep -q '4.3.0-pro3d-final' dont100-apk/app/src/main/assets/index.html
+          grep -q 'arcadePostFX' dont100-apk/app/src/main/assets/index.html
           grep -q 'jumprope:"tap"' dont100-apk/app/src/main/assets/index.html
           grep -q 'No hay límite de tiempo.' dont100-apk/app/src/main/assets/index.html
-          grep -q 'DESLIZA PARA ESQUIVAR' dont100-apk/app/src/main/assets/index.html
           echo "Embedded payload SHA256: $(sha256sum dont100-apk/app/src/main/assets/index.html | cut -d' ' -f1)"
       - name: JavaScript syntax check
         shell: bash
@@ -69,10 +71,10 @@ jobs:
         working-directory: dont100-apk
         run: gradle :app:assembleDebug --stacktrace --no-daemon
       - name: Rename APK
-        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.2.2-VISUAL-PRO.apk"
+        run: cp dont100-apk/app/build/outputs/apk/debug/app-debug.apk "DONT-100-v4.3-PRO-3D-FINAL.apk"
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dont100-v4.2.2-visual-pro-apk
-          path: DONT-100-v4.2.2-VISUAL-PRO.apk
+          name: dont100-v4.3-pro-3d-final-apk
+          path: DONT-100-v4.3-PRO-3D-FINAL.apk
           retention-days: 30
