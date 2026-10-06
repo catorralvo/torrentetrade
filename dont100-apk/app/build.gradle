@@ -7,11 +7,11 @@ android {
     compileSdk 36
 
     defaultConfig {
-        applicationId 'game.dont100.visualpro'
+        applicationId 'game.dont100.pro3dfinal'
         minSdk 24
         targetSdk 36
-        versionCode 6
-        versionName '4.2.2-visualpro'
+        versionCode 7
+        versionName '4.3.0-pro3d-final'
     }
 
     buildTypes {
