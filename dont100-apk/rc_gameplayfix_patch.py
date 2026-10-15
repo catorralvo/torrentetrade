@@ -60,12 +60,12 @@ waiter=r'''function runWaiterBalance(n,r,hard){
  setChallenge(tr("MESERO","WAITER","SERVEUR"),tr("NO DERRAMES EL VINO","DON'T SPILL THE WINE","NE RENVERSE PAS LE VIN"),tr("La tabla se desequilibra sola. Corrige constantemente con el control.","The board wobbles by itself. Keep correcting with the control.","La planche se déséquilibre seule. Corrige sans arrêt avec le contrôle."));
  const c=arcadeCanvas("Waiter Balance"),ctx=c.getContext("2d");
  let target=0,tilt=0,glass=0,vel=0,last=performance.now(),safe=0,spill=0;
- let side=r()<.5?-1:1,bias=side*(.145+r()*.025),nextShift=performance.now()+2200+rint(r,0,350);
+ let side=r()<.5?-1:1,bias=side*(.155+r()*.025),nextShift=performance.now()+4100+rint(r,0,400);
  const ctl=arcadeControlDeck("slide",tr("DESLIZA PARA EQUILIBRAR","SLIDE TO BALANCE","GLISSE POUR ÉQUILIBRER"));
  bindRelativePad(ctl.pad,dx=>target=Math.max(-.30,Math.min(.30,target+dx/430)));
  startArcadeLoop(ts=>{
    const dt=Math.min(.03,(ts-last)/1000||0);last=ts;
-   if(ts>=nextShift){side*=-1;bias=side*(.13+r()*.045);nextShift=ts+2100+rint(r,0,500);tone(210,.025,"sine",.008)}
+   if(ts>=nextShift){side*=-1;bias=side*(.135+r()*.04);nextShift=ts+2800+rint(r,0,600);tone(210,.025,"sine",.008)}
    tilt+=(target+bias-tilt)*Math.min(1,dt*5.0);
    vel+=(tilt*120-glass*.06)*dt;vel*=.992;glass+=vel*dt;
    if(Math.abs(tilt)>.255)spill+=dt;else spill=Math.max(0,spill-dt*1.7);
