@@ -1,11 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://torrentetrade.ch/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-17</lastmod>
   </url>
   <url>
     <loc>https://torrentetrade.ch/subvench/</loc>
     <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://torrentetrade.ch/conseil-operationnel-pme-suisse/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://torrentetrade.ch/optimisation-couts-pme-suisse/</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://torrentetrade.ch/sourcing-equipements-occasion-suisse/</loc>
+    <lastmod>2026-10-17</lastmod>
   </url>
 </urlset>
