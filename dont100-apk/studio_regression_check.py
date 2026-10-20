@@ -39,6 +39,7 @@ check("Waiter automatic tilt bias", "target+bias-tilt" in waiter)
 check("Waiter direction changes", "side*=-1" in waiter)
 check("Waiter falls and spills", "Math.abs(glass)>64" in waiter and "spill>.42" in waiter)
 check("Waiter timed success", "safe>=8.5" in waiter)
+check("Waiter frame delta supports 30fps", "Math.min(.05,(ts-last)/1000||0)" in waiter)
 check("Keep-up unlimited time instruction", "No hay límite de tiempo." in html)
 check("DPR canvas setup", "devicePixelRatio" in html)
 check("Animation loop cleanup", "cancelAnimationFrame" in html)
@@ -61,7 +62,7 @@ def waiter_simulation(fps, guided=False):
     if any(v is None for v in (tilt_rate, accel, spring, damping)):
         return "invalid"
     tilt = glass = vel = spill = safe = 0.0
-    dt = min(.03, 1.0 / fps)
+    dt = min(.05, 1.0 / fps)
     for i in range(int(11.0 * fps)):
         t = i / fps
         bias = .165 if t < 4.2 else (-.155 if t < 7.3 else .155)
