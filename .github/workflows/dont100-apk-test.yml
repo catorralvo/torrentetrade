@@ -70,6 +70,8 @@ jobs:
           Path('/tmp/dont100-game.js').write_text(blocks[-1],encoding='utf-8')
           PY
           node --check /tmp/dont100-game.js
+      - name: Studio regression safeguards
+        run: python dont100-apk/studio_regression_check.py
       - name: Build debug APK
         working-directory: dont100-apk
         run: gradle :app:assembleDebug --stacktrace --no-daemon
