@@ -74,6 +74,8 @@ jobs:
           node --check /tmp/dont100-game.js
       - name: Studio regression safeguards
         run: python dont100-apk/studio_regression_check.py
+      - name: Generate studio QA inventory
+        run: python dont100-apk/studio_qa_inventory.py
       - name: Build debug APK
         working-directory: dont100-apk
         run: gradle :app:assembleDebug --stacktrace --no-daemon
@@ -83,5 +85,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dont100-v4.3.1-gameplay-fix-apk
-          path: DONT-100-v4.3.1-GAMEPLAY-FIX.apk
+          path: |
+            DONT-100-v4.3.1-GAMEPLAY-FIX.apk
+            dont100-apk/studio_qa_report.json
           retention-days: 30
