@@ -59,6 +59,8 @@ jobs:
           grep -q 'spill>.42' dont100-apk/app/src/main/assets/index.html
           grep -q 'No hay límite de tiempo.' dont100-apk/app/src/main/assets/index.html
           echo "Embedded payload SHA256: $(sha256sum dont100-apk/app/src/main/assets/index.html | cut -d' ' -f1)"
+      - name: Apply Studio Finish graphics
+        run: python dont100-apk/rc_studiofinish_patch.py
       - name: JavaScript syntax check
         shell: bash
         run: |
