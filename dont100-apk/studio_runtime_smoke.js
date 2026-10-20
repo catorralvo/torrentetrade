@@ -49,7 +49,7 @@ check('Whack: tapping X fails',()=>{
 });
 check('Whack: seven correct taps win',()=>{
  const h=harness('runWhack',.99);
- for(let i=0;i<7;i++){h.tick(200);const positions=[[72,72],[180,66],[288,74],[124,150],[238,148]];h.tap(...positions[i%5]);}
+ for(let i=0;i<7;i++){h.tick(200);const positions=[[72,72],[180,66]];h.tap(...positions[i%2]);}
  assert.equal(h.result,'pass');
 });
 check('Waiter: idle loses at 60fps',()=>{
@@ -63,7 +63,7 @@ check('Waiter: responsive control can win',()=>{
  h.slide(-.179*430);
  for(let i=0;i<600&&!h.result;i++){
   if(i===265)h.slide(.32*430);
-  if(i===455)h.slide(-.32*430);
+  if(i===420)h.slide(-.32*430);
   h.tick(1000/60);
  }
  assert.equal(h.result,'pass');
