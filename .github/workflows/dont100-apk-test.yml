@@ -74,6 +74,8 @@ jobs:
           node --check /tmp/dont100-game.js
       - name: Studio regression safeguards
         run: python dont100-apk/studio_regression_check.py
+      - name: Runtime arcade smoke tests (Node, no downloads)
+        run: node dont100-apk/studio_runtime_smoke.js
       - name: Generate studio QA inventory
         run: python dont100-apk/studio_qa_inventory.py
       - name: Build debug APK
