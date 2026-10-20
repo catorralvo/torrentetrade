@@ -64,7 +64,7 @@ waiter=r'''function runWaiterBalance(n,r,hard){
  const ctl=arcadeControlDeck("slide",tr("DESLIZA PARA EQUILIBRAR","SLIDE TO BALANCE","GLISSE POUR ÉQUILIBRER"));
  bindRelativePad(ctl.pad,dx=>target=Math.max(-.30,Math.min(.30,target+dx/430)));
  startArcadeLoop(ts=>{
-   const dt=Math.min(.03,(ts-last)/1000||0);last=ts;
+   const dt=Math.min(.05,(ts-last)/1000||0);last=ts;
    if(ts>=nextShift){side*=-1;bias=side*(.135+r()*.04);nextShift=ts+2800+rint(r,0,600);tone(210,.025,"sine",.008)}
    tilt+=(target+bias-tilt)*Math.min(1,dt*5.0);
    vel+=(tilt*120-glass*.06)*dt;vel*=.992;glass+=vel*dt;
