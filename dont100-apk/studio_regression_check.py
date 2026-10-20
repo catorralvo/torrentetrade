@@ -43,6 +43,45 @@ check("Keep-up unlimited time instruction", "No hay límite de tiempo." in html)
 check("DPR canvas setup", "devicePixelRatio" in html)
 check("Animation loop cleanup", "cancelAnimationFrame" in html)
 check("Gameplay patch source retained", "replace_function(s,'runWhack',whack)" in patch and "replace_function(s,'runWaiterBalance',waiter)" in patch)
+# Deterministic approximation of the actual Waiter integration equations.
+# Extract the coefficients from the generated JavaScript, so tuning affects tests.
+def coefficient(pattern):
+    m = re.search(pattern, waiter)
+    return float(m.group(1)) if m else None
+
+tilt_rate = coefficient(r"dt\*([\d.]+)\)")
+accel = coefficient(r"tilt\*([\d.]+)-glass")
+spring = coefficient(r"glass\*([\d.]+)\)\*dt")
+damping = coefficient(r"vel\*=([\d.]+)")
+check("Waiter physics constants readable", all(v is not None for v in (tilt_rate, accel, spring, damping)))
+
+def waiter_simulation(fps, guided=False):
+    # Fixed random scenario: initial rightward bias, then two direction shifts.
+    # The guided player compensates the visible bias; idle player never touches.
+    if any(v is None for v in (tilt_rate, accel, spring, damping)):
+        return "invalid"
+    tilt = glass = vel = spill = safe = 0.0
+    dt = min(.03, 1.0 / fps)
+    for i in range(int(9.0 * fps)):
+        t = i / fps
+        bias = .165 if t < 4.2 else (-.155 if t < 7.3 else .155)
+        target = -bias if guided else 0.0
+        tilt += (target + bias - tilt) * min(1, dt * tilt_rate)
+        vel += (tilt * accel - glass * spring) * dt
+        vel *= damping
+        glass += vel * dt
+        spill = spill + dt if abs(tilt) > .255 else max(0, spill - dt * 1.7)
+        safe += dt
+        if abs(glass) > 64 or spill > .42:
+            return "fail"
+        if safe >= 8.5:
+            return "pass"
+    return "timeout"
+
+for fps in (30, 60, 120):
+    check(f"Waiter idle loses at {fps}fps", waiter_simulation(fps) == "fail")
+    check(f"Waiter ideal control can win at {fps}fps", waiter_simulation(fps, guided=True) == "pass")
+
 if failures:
     sys.exit(f"{len(failures)} static regression check(s) failed")
-print("Static regression checks passed; browser and real-device QA still required.")
+print("Static and deterministic physics checks passed; browser and real-device QA still required.")
