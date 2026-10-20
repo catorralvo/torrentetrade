@@ -62,7 +62,7 @@ def waiter_simulation(fps, guided=False):
         return "invalid"
     tilt = glass = vel = spill = safe = 0.0
     dt = min(.03, 1.0 / fps)
-    for i in range(int(9.0 * fps)):
+    for i in range(int(11.0 * fps)):
         t = i / fps
         bias = .165 if t < 4.2 else (-.155 if t < 7.3 else .155)
         target = -bias if guided else 0.0
