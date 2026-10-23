@@ -59,11 +59,11 @@ check('Waiter: idle loses at 60fps',()=>{
 });
 check('Waiter: responsive control can win',()=>{
  const h=harness('runWaiterBalance',.99);
- // Compensate the initial bias and the predictable shift after 4.1-4.5s.
+ // Counter the deterministic bias before the shifts at 4.1s and 6.9s.
  h.slide(-.179*430);
  for(let i=0;i<600&&!h.result;i++){
-  if(i===265)h.slide(.32*430);
-  if(i===420)h.slide(-.32*430);
+  if(i===245)h.slide(.3536*430);
+  if(i===409)h.slide(-.3492*430);
   h.tick(1000/60);
  }
  assert.equal(h.result,'pass');
