@@ -62,6 +62,8 @@ jobs:
           echo "Embedded payload SHA256: $(sha256sum dont100-apk/app/src/main/assets/index.html | cut -d' ' -f1)"
       - name: Apply Cup Shuffle animation fix
         run: python dont100-apk/rc_cupshuffle_patch.py
+      - name: Apply fair arcade controls
+        run: python dont100-apk/rc_faircontrols_patch.py
       - name: Apply Studio Finish graphics
         run: python dont100-apk/rc_studiofinish_patch.py
       - name: JavaScript syntax check
