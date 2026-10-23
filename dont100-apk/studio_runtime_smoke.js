@@ -68,3 +68,26 @@ check('Waiter: responsive control can win',()=>{
  }
  assert.equal(h.result,'pass');
 });
+
+check('Whack: two missed good targets lose',()=>{
+ const h=harness('runWhack',.99);
+ h.tick(1600); // first good target expires
+ h.tick(200);  // second target appears
+ h.tick(1600); // second good target expires
+ assert.equal(h.result,'fail');
+});
+check('Whack: a wrong-location tap does not count as a hit',()=>{
+ const h=harness('runWhack',.99);
+ h.tap(350,210);
+ assert.equal(h.result,null);
+});
+check('Waiter: idle loses at 30fps',()=>{
+ const h=harness('runWaiterBalance',.99);
+ for(let i=0;i<360&&!h.result;i++)h.tick(1000/30);
+ assert.equal(h.result,'fail');
+});
+check('Waiter: idle loses at 120fps',()=>{
+ const h=harness('runWaiterBalance',.99);
+ for(let i=0;i<1200&&!h.result;i++)h.tick(1000/120);
+ assert.equal(h.result,'fail');
+});
