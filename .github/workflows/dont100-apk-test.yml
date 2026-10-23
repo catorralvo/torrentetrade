@@ -1,4 +1,5 @@
 name: Build DON'T 100 Gameplay Fix APK
+# Build request: 2026-10-23; validate all safeguards before uploading APK.
 
 on:
   push:
