@@ -50,6 +50,11 @@ check("Cup Shuffle exists once", len(re.findall(r"function\s+runCupShuffle\s*\("
 check("Cup Shuffle interpolates swaps", "smooth=t=>t*t*(3-2*t)" in cup and "swap.end" in cup)
 check("Cup Shuffle locks taps while moving", "if(!ready)return" in cup)
 check("Cup Shuffle has no arbitrary timeout", "later(()=>fail(" not in cup)
+for name in ("runPong", "runLaneDodge", "runGateCrash"):
+    body = function_body(name)
+    check(f"{name} uses separate touch control deck", 'arcadeControlDeck("slide"' in body and "bindRelativePad(" in body)
+for name in ("runPong", "runGateCrash", "runShield"):
+    check(f"{name} has no arbitrary short timeout", 'later(()=>fail(t("generic.tooSlow"))' not in function_body(name))
 check("DPR canvas setup", "devicePixelRatio" in html)
 check("Animation loop cleanup", "cancelAnimationFrame" in html)
 check("Gameplay patch source retained", "replace_function(s,'runWhack',whack)" in patch and "replace_function(s,'runWaiterBalance',waiter)" in patch)
